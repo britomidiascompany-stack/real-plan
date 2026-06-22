@@ -206,6 +206,8 @@
   .metric-value { font-size: 17px; font-weight: 700; line-height: 1.1; color: var(--white); }
   .metric-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: 1.2px; opacity: 0.75; margin-top: 4px; font-weight: 500; }
   .stage-metric.big .metric-value { font-size: 22px; }
+  .stage-metrics.four { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .stage-metric.win .metric-value { color: var(--green-bright); }
 
   /* === PÁGINA COMPARISON === */
   .pages-grid {
@@ -428,7 +430,7 @@
 
     <div class="funnel-stage s3">
       <div class="stage-title">Visualizações da Página</div>
-      <div class="stage-metrics">
+      <div class="stage-metrics four">
         <div class="stage-metric big">
           <div class="metric-value">285</div>
           <div class="metric-label">Volume</div>
@@ -440,6 +442,10 @@
         <div class="stage-metric">
           <div class="metric-value">73,8%</div>
           <div class="metric-label">Click → LP</div>
+        </div>
+        <div class="stage-metric win">
+          <div class="metric-value">4,56%</div>
+          <div class="metric-label">LP → Venda</div>
         </div>
       </div>
     </div>
