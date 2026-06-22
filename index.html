@@ -158,6 +158,100 @@
   footer strong { color: var(--purple-bright); font-weight: 600; }
   a { color: var(--purple-bright); }
 
+  /* === FUNIL VISUAL === */
+  .funnel-container {
+    margin: 24px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    max-width: 760px;
+  }
+  .funnel-stage {
+    width: 100%;
+    padding: 16px 24px 14px;
+    background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple) 100%);
+    color: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--purple-bright);
+    transition: transform 0.15s;
+  }
+  .funnel-stage:hover { transform: scale(1.01); }
+  .funnel-stage.s1 { max-width: 100%; }
+  .funnel-stage.s2 { max-width: 88%; }
+  .funnel-stage.s3 { max-width: 76%; }
+  .funnel-stage.s4 { max-width: 64%; }
+  .funnel-stage.s5 {
+    max-width: 52%;
+    background: linear-gradient(135deg, var(--purple) 0%, var(--green) 100%);
+    border-color: var(--green-bright);
+  }
+  .funnel-arrow {
+    width: 0; height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 9px solid var(--purple-bright);
+    opacity: 0.5;
+  }
+  .stage-title {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
+    opacity: 0.85; margin-bottom: 10px; font-weight: 600; text-align: center;
+  }
+  .stage-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px; align-items: center;
+  }
+  .stage-metric { text-align: center; }
+  .metric-value { font-size: 17px; font-weight: 700; line-height: 1.1; color: var(--white); }
+  .metric-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: 1.2px; opacity: 0.75; margin-top: 4px; font-weight: 500; }
+  .stage-metric.big .metric-value { font-size: 22px; }
+
+  /* === PÁGINA COMPARISON === */
+  .pages-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .page-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    transition: border-color 0.15s;
+  }
+  .page-card.winner { border-color: var(--green-border); border-left: 3px solid var(--green); }
+  .page-card.loser { border-left: 3px solid var(--text-muted); }
+  .page-card .page-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 600; margin-bottom: 4px; }
+  .page-card .page-name { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .page-card.winner .page-name { color: var(--green-bright); }
+  .page-card .page-url {
+    display: inline-block;
+    font-size: 11px;
+    color: var(--purple-bright);
+    text-decoration: none;
+    margin-bottom: 14px;
+    word-break: break-all;
+    font-weight: 500;
+  }
+  .page-card .page-url:hover { text-decoration: underline; }
+  .page-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .page-stat { padding: 10px 12px; background: var(--bg-elevated); border-radius: 6px; }
+  .page-stat .ps-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 500; margin-bottom: 3px; }
+  .page-stat .ps-value { font-size: 16px; font-weight: 700; color: var(--white); }
+  .page-stat.highlight .ps-value { color: var(--green-bright); }
+
+  @media (max-width: 600px) {
+    .pages-grid { grid-template-columns: 1fr; }
+    .funnel-stage.s1, .funnel-stage.s2, .funnel-stage.s3, .funnel-stage.s4, .funnel-stage.s5 {
+      max-width: 100%;
+    }
+    .stage-metrics { grid-template-columns: 1fr; gap: 6px; }
+    .stage-metric { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; }
+    .metric-label { margin-top: 0; }
+  }
+
   @media (max-width: 600px) {
     header h1 { font-size: 22px; }
     header { padding: 30px 20px; }
@@ -286,20 +380,193 @@
     +5 vendas ≈ +R$ 374,45 → receita iria pra ~R$ 1.273,15 → ROAS subiria pra 1,28× (break-even superado). Vale a pena estruturar fluxo de recuperação WhatsApp em 30min / 2h / 24h pra capturar isso.
   </div>
 
-  <!-- FUNIL -->
+  <!-- FUNIL VISUAL -->
   <h2>Funil Completo de Vendas</h2>
-  <table>
-    <thead><tr><th>Etapa</th><th class="right">Volume</th><th class="right">Taxa</th></tr></thead>
-    <tbody>
-      <tr><td>Impressões</td><td class="right">25.484</td><td class="right">—</td></tr>
-      <tr><td>Link Clicks</td><td class="right">386</td><td class="right">CTR 1,52%</td></tr>
-      <tr><td>Visualizações da LP</td><td class="right">285</td><td class="right">73,8%</td></tr>
-      <tr><td>Chegou no Checkout (IC)</td><td class="right">83</td><td class="right">29,1%</td></tr>
-      <tr><td class="strong">VENDAS PAGAS</td><td class="right strong">13</td><td class="right strong ok">15,7%</td></tr>
-    </tbody>
-  </table>
+  <p style="text-align:center; font-size:13px; color:var(--text-muted); margin-top:-8px;">Cada etapa mostra <strong style="color:var(--purple-bright)">Volume</strong>, <strong style="color:var(--purple-bright)">Custo</strong> e <strong style="color:var(--purple-bright)">Taxa</strong></p>
+
+  <div class="funnel-container">
+
+    <div class="funnel-stage s1">
+      <div class="stage-title">Impressões</div>
+      <div class="stage-metrics">
+        <div class="stage-metric big">
+          <div class="metric-value">25.484</div>
+          <div class="metric-label">Volume</div>
+        </div>
+        <div class="stage-metric">
+          <div class="metric-value">R$ 34,41</div>
+          <div class="metric-label">CPM</div>
+        </div>
+        <div class="stage-metric">
+          <div class="metric-value">1,08</div>
+          <div class="metric-label">Frequência</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="funnel-arrow"></div>
+
+    <div class="funnel-stage s2">
+      <div class="stage-title">Cliques no Link</div>
+      <div class="stage-metrics">
+        <div class="stage-metric big">
+          <div class="metric-value">386</div>
+          <div class="metric-label">Volume</div>
+        </div>
+        <div class="stage-metric">
+          <div class="metric-value">R$ 2,27</div>
+          <div class="metric-label">CPC link</div>
+        </div>
+        <div class="stage-metric">
+          <div class="metric-value">1,52%</div>
+          <div class="metric-label">CTR</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="funnel-arrow"></div>
+
+    <div class="funnel-stage s3">
+      <div class="stage-title">Visualizações da Página</div>
+      <div class="stage-metrics">
+        <div class="stage-metric big">
+          <div class="metric-value">285</div>
+          <div class="metric-label">Volume</div>
+        </div>
+        <div class="stage-metric">
+          <div class="metric-value">R$ 3,08</div>
+          <div class="metric-label">Custo/LP view</div>
+        </div>
+        <div class="stage-metric">
+          <div class="metric-value">73,8%</div>
+          <div class="metric-label">Click → LP</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="funnel-arrow"></div>
+
+    <div class="funnel-stage s4">
+      <div class="stage-title">Chegou no Checkout</div>
+      <div class="stage-metrics">
+        <div class="stage-metric big">
+          <div class="metric-value">83</div>
+          <div class="metric-label">Volume</div>
+        </div>
+        <div class="stage-metric">
+          <div class="metric-value">R$ 10,57</div>
+          <div class="metric-label">Custo/IC</div>
+        </div>
+        <div class="stage-metric">
+          <div class="metric-value">29,1%</div>
+          <div class="metric-label">LP → Checkout</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="funnel-arrow"></div>
+
+    <div class="funnel-stage s5">
+      <div class="stage-title">Vendas Pagas</div>
+      <div class="stage-metrics">
+        <div class="stage-metric big">
+          <div class="metric-value">13</div>
+          <div class="metric-label">Volume</div>
+        </div>
+        <div class="stage-metric">
+          <div class="metric-value">R$ 67,46</div>
+          <div class="metric-label">CPA</div>
+        </div>
+        <div class="stage-metric">
+          <div class="metric-value">15,7%</div>
+          <div class="metric-label">Checkout → Venda</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPARATIVO POR PÁGINA -->
+  <h2>Performance por Página (V1 vs V2)</h2>
+  <p>Comparação direta das duas páginas de vendas com o <strong>mesmo investimento</strong> (~R$ 437 cada). Veja como a página V2 transforma o mesmo tráfego em quase o dobro de vendas.</p>
+
+  <div class="pages-grid">
+
+    <div class="page-card loser">
+      <div class="page-label">Página V1</div>
+      <div class="page-name">LP Antiga</div>
+      <a class="page-url" href="https://realplancredito.com/rating-bancario-v1/" target="_blank" rel="noopener">🔗 realplancredito.com/rating-bancario-v1/</a>
+      <div class="page-stats">
+        <div class="page-stat">
+          <div class="ps-label">Visualizações</div>
+          <div class="ps-value">156</div>
+        </div>
+        <div class="page-stat">
+          <div class="ps-label">Vendas pagas</div>
+          <div class="ps-value">5</div>
+        </div>
+        <div class="page-stat">
+          <div class="ps-label">Conv. LP→Venda</div>
+          <div class="ps-value">3,21%</div>
+        </div>
+        <div class="page-stat">
+          <div class="ps-label">CPA Meta</div>
+          <div class="ps-value">R$ 87,59</div>
+        </div>
+        <div class="page-stat">
+          <div class="ps-label">Investido</div>
+          <div class="ps-value">R$ 437,93</div>
+        </div>
+        <div class="page-stat">
+          <div class="ps-label">ROAS</div>
+          <div class="ps-value">0,75×</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card winner">
+      <div class="page-label">Página V2 · Vencedora</div>
+      <div class="page-name">LP Direta</div>
+      <a class="page-url" href="https://realplancredito.com/rating-bancario-v2/" target="_blank" rel="noopener">🔗 realplancredito.com/rating-bancario-v2/</a>
+      <div class="page-stats">
+        <div class="page-stat">
+          <div class="ps-label">Visualizações</div>
+          <div class="ps-value">129</div>
+        </div>
+        <div class="page-stat highlight">
+          <div class="ps-label">Vendas pagas</div>
+          <div class="ps-value">8</div>
+        </div>
+        <div class="page-stat highlight">
+          <div class="ps-label">Conv. LP→Venda</div>
+          <div class="ps-value">6,20%</div>
+        </div>
+        <div class="page-stat highlight">
+          <div class="ps-label">CPA Meta</div>
+          <div class="ps-value">R$ 54,71</div>
+        </div>
+        <div class="page-stat">
+          <div class="ps-label">Investido</div>
+          <div class="ps-value">R$ 437,64</div>
+        </div>
+        <div class="page-stat highlight">
+          <div class="ps-label">ROAS</div>
+          <div class="ps-value">1,30×</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note win">
+    <strong>A V2 converte quase o DOBRO da V1</strong>
+    Mesmo orçamento, mas a V2 faz 6,20% de conversão LP→Venda contra 3,21% da V1. Em CPA: R$ 54,71 (V2) vs R$ 87,59 (V1). A LP mais direta validou — recomendação é migrar 100% do orçamento pra V2 e descansar a V1.
+  </div>
+
   <div class="note">
-    <strong>CTR subiu de 1,24% pra 1,52%</strong> — efeito direto da nova LP V2 + criativos otimizados. Checkout→Venda também melhorou (era 14,7%, agora 15,7%). Ainda tem caminho (benchmark mercado: 25-40%), mas tendência ascendente confirmada.
+    <strong>Funil — pontos fortes e fracos</strong>
+    ✅ <strong>LP view (73,8%)</strong> e <strong>chegada no checkout (29,1%)</strong> estão bem.<br>
+    ⚠️ <strong>Checkout → Venda (15,7%)</strong> ainda longe do benchmark (25-40%). Esse é o próximo gargalo a destravar — recuperação automática de PIX é o caminho mais barato pra subir esse número.
   </div>
 
   <!-- POR CAMPANHA -->
