@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório RTKB · Iarla Pugliesi · 18–22/jun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-elevated: #14141c;
+    --bg-card: #1a1a24;
+    --bg-table-row: #15151e;
+    --border: #2a2a38;
+    --border-soft: #1f1f2a;
+
+    --white: #ffffff;
+    --text: #ffffff;
+    --text-soft: #c2c2d0;
+    --text-muted: #7a7a8a;
+
+    --purple: #8b5cf6;
+    --purple-bright: #a78bfa;
+    --purple-deep: #7c3aed;
+    --purple-dark: #6d28d9;
+    --purple-soft-bg: rgba(139, 92, 246, 0.12);
+    --purple-border: rgba(139, 92, 246, 0.25);
+
+    --red: #ef4444;
+    --red-bright: #f87171;
+    --red-soft-bg: rgba(239, 68, 68, 0.12);
+    --red-border: rgba(239, 68, 68, 0.3);
+
+    --green: #22c55e;
+    --green-bright: #4ade80;
+    --green-soft-bg: rgba(34, 197, 94, 0.12);
+    --green-border: rgba(34, 197, 94, 0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px 60px; }
+  header {
+    background: linear-gradient(135deg, #14141c 0%, #1f1530 100%);
+    color: var(--white);
+    padding: 38px 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--purple);
+  }
+  header .brand { font-size: 11px; letter-spacing: 3px; opacity: 0.85; text-transform: uppercase; margin-bottom: 10px; color: var(--purple-bright); font-weight: 500;}
+  header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
+  header .period { font-size: 13px; color: var(--text-soft); font-weight: 300; }
+
+  h2 {
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin: 44px 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    color: var(--white);
+    font-weight: 600;
+    position: relative;
+  }
+  h2::before { content: ''; position: absolute; bottom: -1px; left: 0; width: 60px; height: 1px; background: var(--purple); }
+  h3 { font-size: 14px; font-weight: 600; margin: 22px 0 10px; color: var(--purple-bright); letter-spacing: 0.3px; }
+  p { margin-bottom: 14px; font-size: 14.5px; color: var(--text-soft); font-weight: 300; }
+  p strong { color: var(--white); font-weight: 600; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 22px 0; }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 18px 16px;
+    border-radius: 10px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--purple-border); }
+  .card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); margin-bottom: 8px; font-weight: 500; }
+  .card .value { font-size: 22px; font-weight: 700; color: var(--white); letter-spacing: -0.3px; }
+  .card .sub { font-size: 11.5px; color: var(--text-muted); margin-top: 5px; font-weight: 300; }
+  .card.positive { border-left: 3px solid var(--purple); }
+  .card.positive .value { color: var(--purple-bright); }
+  .card.negative { border-left: 3px solid var(--text-muted); }
+  .card.negative .value { color: var(--white); }
+  .card.warn { border-left: 3px solid var(--purple-deep); }
+  .card.warn .value { color: var(--purple-bright); }
+  .card.alert { border-left: 3px solid var(--red); }
+  .card.alert .value { color: var(--red-bright); }
+  .card.win { border-left: 3px solid var(--green); }
+  .card.win .value { color: var(--green-bright); }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 13.5px;
+    background: var(--bg-card); border-radius: 10px; overflow: hidden; border: 1px solid var(--border);
+  }
+  th { background: var(--bg-elevated); color: var(--purple-bright); text-align: left; padding: 12px 14px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; border-bottom: 1px solid var(--border); }
+  td { padding: 12px 14px; border-bottom: 1px solid var(--border-soft); color: var(--text-soft); font-weight: 300; }
+  td strong, .strong { font-weight: 600; color: var(--white); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(139, 92, 246, 0.04); }
+  .right { text-align: right; font-variant-numeric: tabular-nums; }
+  .ok { color: var(--purple-bright); font-weight: 600; }
+  .bad { color: var(--red-bright); font-weight: 600; }
+  .win { color: var(--green-bright); font-weight: 700; }
+  .neutral { color: var(--white); font-weight: 600; }
+
+  .note {
+    background: var(--purple-soft-bg); border: 1px solid var(--purple-border); border-left: 3px solid var(--purple);
+    padding: 18px 20px; margin: 22px 0; border-radius: 8px; font-size: 14px; color: var(--text-soft); font-weight: 300;
+  }
+  .note strong { display: block; margin-bottom: 6px; color: var(--purple-bright); font-weight: 600; }
+  .note.win { background: var(--green-soft-bg); border-color: var(--green-border); border-left-color: var(--green); }
+  .note.win strong { color: var(--green-bright); }
+  .note.warn { background: var(--red-soft-bg); border-color: var(--red-border); border-left-color: var(--red); }
+  .note.warn strong { color: var(--red-bright); }
+
+  .message {
+    background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--purple);
+    padding: 22px 24px; margin: 18px 0; border-radius: 8px;
+  }
+  .message p { font-size: 14.5px; color: var(--text-soft); font-weight: 300; }
+  .message p:last-child { margin-bottom: 0; }
+  .message strong { color: var(--white); font-weight: 600; }
+
+  .creative-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 18px 20px; margin-bottom: 12px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    transition: border-color 0.15s;
+  }
+  .creative-card:hover { border-color: var(--purple-border); }
+  .creative-card.winner { border-left: 3px solid var(--green); }
+  .creative-info .name { font-weight: 600; font-size: 14px; color: var(--white); }
+  .creative-info .meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; font-weight: 300; }
+  .creative-info .stats { font-size: 12px; color: var(--purple-bright); margin-top: 4px; font-weight: 500; }
+  .creative-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; background: var(--purple); color: var(--white); text-decoration: none;
+    padding: 8px 14px; border-radius: 6px; font-size: 11.5px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.8px; transition: background 0.15s, transform 0.1s;
+  }
+  .btn:hover { background: var(--purple-deep); transform: translateY(-1px); }
+  .badge { display: inline-block; background: var(--purple); color: var(--white); padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.3px; }
+  .badge.gray { background: var(--border); color: var(--text-muted); }
+  .badge.winner { background: var(--green); }
+  .badge.alert { background: var(--red); }
+
+  footer { text-align: center; margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 12px; font-weight: 300; }
+  footer strong { color: var(--purple-bright); font-weight: 600; }
+  a { color: var(--purple-bright); }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 22px; }
+    header { padding: 30px 20px; }
+    h2 { font-size: 15px; }
+    .card .value { font-size: 18px; }
+    table { font-size: 12.5px; }
+    th, td { padding: 9px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">Brito Mídias · Gestão de Tráfego</div>
+  <h1>Relatório RTKB — Iarla Pugliesi</h1>
+  <div class="period">Período: 18 a 22 de junho de 2026 · 5 dias</div>
+</header>
+
+<div class="wrap">
+
+  <!-- MENSAGEM DO GESTOR -->
+  <h2>Mensagem do Gestor</h2>
+  <div class="message">
+    <p>Iarla, segue o relatório dos últimos 5 dias (18 a 22/jun) com a nova estrutura de campanhas <strong>[06] PADRÃO V1</strong> e <strong>[07] PADRÃO V2</strong> que subimos com a página de vendas atualizada.</p>
+    <p>O resultado já está <strong>muito melhor</strong> que o anterior — <strong>ROAS subiu de 0,36× pra 0,90×</strong>, quase break-even. E identifiquei <strong>um combo vencedor escondido</strong> que pode acelerar muito a partir de agora (ver seção "Descoberta" abaixo).</p>
+    <p>A receita já calculada usa o <strong>valor do produto</strong> (R$ 79,90 para a Consulta Rating Bancário e R$ 9,90 pra o order bump "Boas Práticas"), não o líquido coproducer da Kiwify.</p>
+  </div>
+
+  <!-- RESUMO EXECUTIVO -->
+  <h2>Resumo Executivo</h2>
+  <div class="cards">
+    <div class="card negative">
+      <div class="label">Investimento Meta</div>
+      <div class="value">R$ 876,99</div>
+      <div class="sub">+ R$ 121,29 imposto (13,83%)</div>
+    </div>
+    <div class="card negative">
+      <div class="label">Custo Total</div>
+      <div class="value">R$ 998,28</div>
+      <div class="sub">Meta + impostos</div>
+    </div>
+    <div class="card positive">
+      <div class="label">Receita (valor produto)</div>
+      <div class="value">R$ 898,70</div>
+      <div class="sub">11 principal + 2 order bump</div>
+    </div>
+    <div class="card win">
+      <div class="label">Vendas Pagas</div>
+      <div class="value">13</div>
+      <div class="sub">+ 11 PIX pendentes</div>
+    </div>
+    <div class="card alert">
+      <div class="label">Resultado</div>
+      <div class="value">−R$ 99,58</div>
+      <div class="sub">Quase break-even</div>
+    </div>
+    <div class="card win">
+      <div class="label">ROAS</div>
+      <div class="value">0,90×</div>
+      <div class="sub">Antes: 0,36× (+150%)</div>
+    </div>
+  </div>
+
+  <!-- DESCOBERTA -->
+  <h2>🟢 Descoberta: Combo Vencedor</h2>
+  <div class="note win">
+    <strong>ADV06 + Página V2 (camp [07]) = ROAS 4,10×</strong>
+    Com apenas <strong>R$ 41,31 investidos</strong>, esse combo gerou <strong>3 vendas (R$ 169,70 em receita)</strong>. CPA de R$ 13,77 — muito abaixo do break-even (R$ 79,90).
+    <br><br>
+    O ADV06, que estava "morto" em maio (CPA caríssimo na LP antiga), <strong>ressuscitou na LP V2</strong>. Mesmo criativo, página diferente, resultado oposto. Isso valida que a LP V2 está performando significativamente melhor.
+    <br><br>
+    <strong>Ação imediata quando reativar:</strong> subir o budget desse anúncio dentro da camp [07] e descansar o ADV06 na camp [06] (que zerou vendas).
+  </div>
+
+  <!-- INVESTIMENTO X RETORNO -->
+  <h2>Investimento × Retorno</h2>
+
+  <h3>Custos</h3>
+  <table>
+    <thead><tr><th>Item</th><th class="right">Valor</th></tr></thead>
+    <tbody>
+      <tr><td>Investimento Meta Ads</td><td class="right">R$ 876,99</td></tr>
+      <tr><td>Imposto Meta (13,83%)</td><td class="right">R$ 121,29</td></tr>
+      <tr><td class="strong">CUSTO TOTAL</td><td class="right strong">R$ 998,28</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Receita pelo valor do produto</h3>
+  <table>
+    <thead><tr><th>Produto</th><th class="right">Preço unit.</th><th class="right">Vendas pagas</th><th class="right">Receita</th></tr></thead>
+    <tbody>
+      <tr><td>Consulta Rating Bancário</td><td class="right">R$ 79,90</td><td class="right">11</td><td class="right">R$ 878,90</td></tr>
+      <tr><td>Boas Práticas (order bump)</td><td class="right">R$ 9,90</td><td class="right">2</td><td class="right">R$ 19,80</td></tr>
+      <tr><td class="strong">TOTAL</td><td class="right strong">—</td><td class="right strong">13</td><td class="right strong ok">R$ 898,70</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Resultado</h3>
+  <table>
+    <tbody>
+      <tr><td>Receita (valor do produto)</td><td class="right">R$ 898,70</td></tr>
+      <tr><td>Custo total</td><td class="right">−R$ 998,28</td></tr>
+      <tr><td class="strong">RESULTADO</td><td class="right strong bad">−R$ 99,58</td></tr>
+      <tr><td>ROAS</td><td class="right">0,90×</td></tr>
+      <tr><td>Recuperação do investimento</td><td class="right">90,0%</td></tr>
+      <tr><td>CPA real (com imposto)</td><td class="right">R$ 76,79</td></tr>
+      <tr><td>Ticket médio (com OB diluído)</td><td class="right">R$ 69,13</td></tr>
+    </tbody>
+  </table>
+
+  <!-- STATUS PEDIDOS KIWIFY -->
+  <h2>Status dos Pedidos (Kiwify)</h2>
+  <table>
+    <thead><tr><th>Status</th><th class="right">Qtd</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td class="strong ok">✅ Pagos</td><td class="right strong">13</td><td>Vendas confirmadas — entram na receita</td></tr>
+      <tr><td>🟡 PIX Pendentes</td><td class="right">11</td><td>R$ 748,90 em potencial — historicamente 40-60% convertem</td></tr>
+      <tr><td class="bad">🔴 Reembolsados</td><td class="right">3</td><td>R$ 239,70 em devoluções (descontados)</td></tr>
+      <tr><td class="bad">🔴 Cartão Recusado</td><td class="right">1</td><td>Cartão recusado pelo banco emissor</td></tr>
+      <tr><td class="strong">Total entradas</td><td class="right strong">28</td><td>Período: 18-22/jun</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <strong>Potencial se 50% dos PIX pendentes converterem</strong>
+    +5 vendas ≈ +R$ 374,45 → receita iria pra ~R$ 1.273,15 → ROAS subiria pra 1,28× (break-even superado). Vale a pena estruturar fluxo de recuperação WhatsApp em 30min / 2h / 24h pra capturar isso.
+  </div>
+
+  <!-- FUNIL -->
+  <h2>Funil Completo de Vendas</h2>
+  <table>
+    <thead><tr><th>Etapa</th><th class="right">Volume</th><th class="right">Taxa</th></tr></thead>
+    <tbody>
+      <tr><td>Impressões</td><td class="right">25.484</td><td class="right">—</td></tr>
+      <tr><td>Link Clicks</td><td class="right">386</td><td class="right">CTR 1,52%</td></tr>
+      <tr><td>Visualizações da LP</td><td class="right">285</td><td class="right">73,8%</td></tr>
+      <tr><td>Chegou no Checkout (IC)</td><td class="right">83</td><td class="right">29,1%</td></tr>
+      <tr><td class="strong">VENDAS PAGAS</td><td class="right strong">13</td><td class="right strong ok">15,7%</td></tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <strong>CTR subiu de 1,24% pra 1,52%</strong> — efeito direto da nova LP V2 + criativos otimizados. Checkout→Venda também melhorou (era 14,7%, agora 15,7%). Ainda tem caminho (benchmark mercado: 25-40%), mas tendência ascendente confirmada.
+  </div>
+
+  <!-- POR CAMPANHA -->
+  <h2>Vendas por Campanha</h2>
+  <table>
+    <thead><tr><th>Campanha</th><th class="right">Gasto</th><th class="right">Vendas</th><th class="right">CPA</th><th class="right">ROAS</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="strong">[07] PADRÃO V2 (LP nova)</td>
+        <td class="right">R$ 437,64</td>
+        <td class="right strong">8</td>
+        <td class="right">R$ 54,71</td>
+        <td class="right ok"><strong>1,30×</strong></td>
+        <td><span class="badge winner">Lucrativa</span></td>
+      </tr>
+      <tr>
+        <td>[06] PADRÃO V1 (LP antiga)</td>
+        <td class="right">R$ 437,93</td>
+        <td class="right">5</td>
+        <td class="right">R$ 87,59</td>
+        <td class="right">0,75×</td>
+        <td><span class="badge gray">Deficitária</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="note win">
+    <strong>LP V2 venceu a V1 com folga</strong>
+    Mesmo orçamento (R$ 437 cada), mas a LP V2 trouxe 60% mais vendas e ROAS quase 75% maior. Recomendo migrar 100% do budget pra [07] na próxima rodada.
+  </div>
+
+  <!-- POR CRIATIVO -->
+  <h2>Vendas por Criativo</h2>
+  <table>
+    <thead><tr><th>Criativo</th><th>Camp.</th><th class="right">Gasto</th><th class="right">Vendas</th><th class="right">CPA</th><th class="right">ROAS</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="strong">⭐ ADV06 — Por que Reprovado</td>
+        <td>[07] V2</td>
+        <td class="right">R$ 41,31</td>
+        <td class="right strong">3</td>
+        <td class="right win">R$ 13,77</td>
+        <td class="right win"><strong>4,10×</strong></td>
+      </tr>
+      <tr>
+        <td>ADV07 — Como Saber Rating</td>
+        <td>[07] V2</td>
+        <td class="right">R$ 396,33</td>
+        <td class="right">5</td>
+        <td class="right">R$ 79,27</td>
+        <td class="right ok">1,01×</td>
+      </tr>
+      <tr>
+        <td>ADV07 — Como Saber Rating</td>
+        <td>[06] V1</td>
+        <td class="right">R$ 403,33</td>
+        <td class="right">5</td>
+        <td class="right">R$ 80,67</td>
+        <td class="right">0,82×</td>
+      </tr>
+      <tr>
+        <td>ADV06 — Por que Reprovado</td>
+        <td>[06] V1</td>
+        <td class="right">R$ 34,67</td>
+        <td class="right bad">0</td>
+        <td class="right">—</td>
+        <td class="right bad">0,00×</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <strong>Observação importante: o mesmo criativo, em LPs diferentes, performou de forma oposta</strong>
+    O ADV06 fez 4,10× ROAS na LP V2 e 0× ROAS na LP V1 — prova de que <strong>não é o criativo, é a combinação criativo × página</strong>. Reforça por que vamos parar a LP V1.
+  </div>
+
+  <!-- MELHORES CRIATIVOS -->
+  <h2>Melhores Criativos (Drive)</h2>
+
+  <div class="creative-card winner">
+    <div class="creative-info">
+      <div class="name">⭐ ADV06 — Por que Financiamento Reprovado</div>
+      <div class="meta">Duração: 0:40 · Combo vencedor com LP V2</div>
+      <div class="stats">ROAS 4,10× · CPA R$ 13,77 · 3 vendas com R$ 41 investidos</div>
+    </div>
+    <div class="creative-actions">
+      <a class="btn" href="https://drive.google.com/file/d/11rQ9H9Dobq0sS68JRREt9DiEiNwi27DT/view?usp=drivesdk" target="_blank" rel="noopener">Ver no Drive</a>
+    </div>
+  </div>
+
+  <div class="creative-card">
+    <div class="creative-info">
+      <div class="name">ADV07 — Como Saber Rating Bancário</div>
+      <div class="meta">Duração: 0:29 · Funciona nas duas LPs</div>
+      <div class="stats">10 vendas · ROAS 1,01× (V2) e 0,82× (V1) · Volume estável</div>
+    </div>
+    <div class="creative-actions">
+      <a class="btn" href="https://drive.google.com/file/d/10bQNUfmtQ8XYngRhrdt9WBF5iHc53eqN/view?usp=drivesdk" target="_blank" rel="noopener">Ver no Drive</a>
+    </div>
+  </div>
+
+  <!-- ANÁLISE ESTRATÉGICA -->
+  <h2>Análise Estratégica</h2>
+  <div class="message">
+    <p><strong>1. A LP V2 está validada.</strong> 60% mais vendas e ROAS 75% maior que a V1 com o mesmo investimento. Próxima campanha: 100% no V2.</p>
+    <p><strong>2. ADV06 + LP V2 é uma descoberta importante.</strong> Mesmo criativo que "morreu" em maio voltou à vida com a nova LP. ROAS 4,10× com pouco volume — escalando com cautela, pode multiplicar o resultado.</p>
+    <p><strong>3. Funil melhorando consistentemente.</strong> CTR 1,24% → 1,52% / Checkout→Venda 14,7% → 15,7%. Direção certa, mas ainda há gap pro benchmark (25-40% no checkout).</p>
+    <p><strong>4. 11 PIX pendentes (R$ 748) é dinheiro deixado na mesa.</strong> Implementar fluxo automático de recuperação WhatsApp (30min, 2h, 24h) é a alavanca mais barata e rápida pra subir o ROAS.</p>
+  </div>
+
+  <!-- PRÓXIMOS PASSOS -->
+  <h2>Próximos Passos</h2>
+  <table>
+    <thead><tr><th>#</th><th>Ação</th><th>Prioridade</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="strong">Pausar campanha [06] (LP V1) — migrar verba pra [07] (LP V2)</td><td><span class="badge alert">Alta</span></td></tr>
+      <tr><td>2</td><td class="strong">Subir budget do ADV06 dentro da camp [07]</td><td><span class="badge alert">Alta</span></td></tr>
+      <tr><td>3</td><td class="strong">Implementar recuperação PIX automática (30min/2h/24h)</td><td><span class="badge alert">Alta</span></td></tr>
+      <tr><td>4</td><td>Produzir 3-5 variações do ADV06 e ADV07 (nova leva)</td><td><span class="badge">Média</span></td></tr>
+      <tr><td>5</td><td>Avaliar Avatar IA (HeyGen, R$ 30-40/vídeo) pra acelerar produção</td><td><span class="badge">Média</span></td></tr>
+      <tr><td>6</td><td>Continuar monitorando conversão de PIX vs. vendas reais</td><td><span class="badge">Contínua</span></td></tr>
+    </tbody>
+  </table>
+
+  <footer>
+    Relatório gerado em <strong>22 de junho de 2026</strong> · Brito Mídias<br>
+    Gestão de Tráfego Pago · Conta Meta: 944689576621206<br>
+    Período: 18 a 22/jun/2026 · Plataforma de vendas: Kiwify
+  </footer>
+
+</div>
+</body>
+</html>
