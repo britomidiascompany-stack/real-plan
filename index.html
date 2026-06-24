@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relatório RTKB · Iarla Pugliesi · 18–22/jun</title>
+<title>Relatório RTKB · Iarla Pugliesi · 18–24/jun</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -249,18 +249,9 @@
     .funnel-stage.s1, .funnel-stage.s2, .funnel-stage.s3, .funnel-stage.s4, .funnel-stage.s5 {
       max-width: 100%;
     }
-    .stage-metrics { grid-template-columns: 1fr; gap: 6px; }
+    .stage-metrics, .stage-metrics.four { grid-template-columns: 1fr; gap: 6px; }
     .stage-metric { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; }
     .metric-label { margin-top: 0; }
-  }
-
-  @media (max-width: 600px) {
-    header h1 { font-size: 22px; }
-    header { padding: 30px 20px; }
-    h2 { font-size: 15px; }
-    .card .value { font-size: 18px; }
-    table { font-size: 12.5px; }
-    th, td { padding: 9px 10px; }
   }
 </style>
 </head>
@@ -269,7 +260,7 @@
 <header>
   <div class="brand">Brito Mídias · Gestão de Tráfego</div>
   <h1>Relatório RTKB — Iarla Pugliesi</h1>
-  <div class="period">Período: 18 a 22 de junho de 2026 · 5 dias</div>
+  <div class="period">Período: 18 a 24 de junho de 2026 · 7 dias · Atualizado às 17:52</div>
 </header>
 
 <div class="wrap">
@@ -277,9 +268,9 @@
   <!-- MENSAGEM DO GESTOR -->
   <h2>Mensagem do Gestor</h2>
   <div class="message">
-    <p>Iarla, segue o relatório dos últimos 5 dias (18 a 22/jun) com a nova estrutura de campanhas <strong>[06] PADRÃO V1</strong> e <strong>[07] PADRÃO V2</strong> que subimos com a página de vendas atualizada.</p>
-    <p>O resultado já está <strong>muito melhor</strong> que o anterior — <strong>ROAS subiu de 0,36× pra 0,90×</strong>, quase break-even. E identifiquei <strong>um combo vencedor escondido</strong> que pode acelerar muito a partir de agora (ver seção "Descoberta" abaixo).</p>
-    <p>A receita já calculada usa o <strong>valor do produto</strong> (R$ 79,90 para a Consulta Rating Bancário e R$ 9,90 pra o order bump "Boas Práticas"), não o líquido coproducer da Kiwify.</p>
+    <p>Iarla, atualização dos últimos 7 dias (18 a 24/jun). <strong>Notícia importante: a operação virou positiva.</strong></p>
+    <p>O <strong>ROAS subiu de 0,90× pra 1,02×</strong> e a operação está com lucro pela primeira vez (R$ 24,01). Ainda apertado, mas saímos do prejuízo. E mais importante: a tendência continua subindo (LP→Venda passou de 4,56% pra 5,10%).</p>
+    <p>O ADV07 está bem nas duas LPs e o ADV06 mantém o melhor CPA (R$ 20,82 na LP V2). A LP V1 também melhorou bastante: passou de 3,21% pra 4,21% de conversão.</p>
   </div>
 
   <!-- RESUMO EXECUTIVO -->
@@ -287,45 +278,55 @@
   <div class="cards">
     <div class="card negative">
       <div class="label">Investimento Meta</div>
-      <div class="value">R$ 876,99</div>
-      <div class="sub">+ R$ 121,29 imposto (13,83%)</div>
+      <div class="value">R$ 1.198,27</div>
+      <div class="sub">+ R$ 165,72 imposto (13,83%)</div>
     </div>
     <div class="card negative">
       <div class="label">Custo Total</div>
-      <div class="value">R$ 998,28</div>
+      <div class="value">R$ 1.363,99</div>
       <div class="sub">Meta + impostos</div>
     </div>
     <div class="card positive">
       <div class="label">Receita (valor produto)</div>
-      <div class="value">R$ 898,70</div>
-      <div class="sub">11 principal + 2 order bump</div>
+      <div class="value">R$ 1.388,00</div>
+      <div class="sub">17 principal + 3 order bump</div>
     </div>
     <div class="card win">
       <div class="label">Vendas Pagas</div>
-      <div class="value">13</div>
-      <div class="sub">+ 11 PIX pendentes</div>
+      <div class="value">20</div>
+      <div class="sub">+ 14 PIX pendentes</div>
     </div>
-    <div class="card alert">
+    <div class="card win">
       <div class="label">Resultado</div>
-      <div class="value">−R$ 99,58</div>
-      <div class="sub">Quase break-even</div>
+      <div class="value">+R$ 24,01</div>
+      <div class="sub">Operação no positivo 🎉</div>
     </div>
     <div class="card win">
       <div class="label">ROAS</div>
-      <div class="value">0,90×</div>
-      <div class="sub">Antes: 0,36× (+150%)</div>
+      <div class="value">1,02×</div>
+      <div class="sub">Antes: 0,90× (+13%)</div>
     </div>
   </div>
 
-  <!-- DESCOBERTA -->
-  <h2>🟢 Descoberta: Combo Vencedor</h2>
+  <!-- EVOLUÇÃO -->
+  <h2>📈 Evolução vs Relatório Anterior (18–22/jun)</h2>
+  <table>
+    <thead><tr><th>Indicador</th><th class="right">18–22/jun</th><th class="right">18–24/jun</th><th class="right">Variação</th></tr></thead>
+    <tbody>
+      <tr><td>Vendas pagas</td><td class="right">13</td><td class="right strong">20</td><td class="right ok">+54%</td></tr>
+      <tr><td>Receita (valor produto)</td><td class="right">R$ 898,70</td><td class="right strong">R$ 1.388,00</td><td class="right ok">+54%</td></tr>
+      <tr><td>Investimento Meta</td><td class="right">R$ 876,99</td><td class="right">R$ 1.198,27</td><td class="right">+37%</td></tr>
+      <tr><td>Custo total</td><td class="right">R$ 998,28</td><td class="right">R$ 1.363,99</td><td class="right">+37%</td></tr>
+      <tr><td>Resultado</td><td class="right bad">−R$ 99,58</td><td class="right win">+R$ 24,01</td><td class="right win">virou positivo ✅</td></tr>
+      <tr><td>ROAS</td><td class="right">0,90×</td><td class="right strong">1,02×</td><td class="right ok">+13%</td></tr>
+      <tr><td>CTR link</td><td class="right">1,52%</td><td class="right strong">1,59%</td><td class="right ok">+5%</td></tr>
+      <tr><td>Conv. LP → Venda</td><td class="right">4,56%</td><td class="right strong">5,10%</td><td class="right ok">+12%</td></tr>
+      <tr><td>Conv. Checkout → Venda</td><td class="right">15,7%</td><td class="right strong">18,2%</td><td class="right ok">+16%</td></tr>
+    </tbody>
+  </table>
   <div class="note win">
-    <strong>ADV06 + Página V2 (camp [07]) = ROAS 4,10×</strong>
-    Com apenas <strong>R$ 41,31 investidos</strong>, esse combo gerou <strong>3 vendas (R$ 169,70 em receita)</strong>. CPA de R$ 13,77 — muito abaixo do break-even (R$ 79,90).
-    <br><br>
-    O ADV06, que estava "morto" em maio (CPA caríssimo na LP antiga), <strong>ressuscitou na LP V2</strong>. Mesmo criativo, página diferente, resultado oposto. Isso valida que a LP V2 está performando significativamente melhor.
-    <br><br>
-    <strong>Ação imediata quando reativar:</strong> subir o budget desse anúncio dentro da camp [07] e descansar o ADV06 na camp [06] (que zerou vendas).
+    <strong>A receita cresceu mais rápido que o investimento</strong>
+    Aumentamos o budget em 37% e a receita subiu 54%. Isso significa que estamos otimizando — não só comprando mais tráfego, mas convertendo melhor cada real investido.
   </div>
 
   <!-- INVESTIMENTO X RETORNO -->
@@ -335,9 +336,9 @@
   <table>
     <thead><tr><th>Item</th><th class="right">Valor</th></tr></thead>
     <tbody>
-      <tr><td>Investimento Meta Ads</td><td class="right">R$ 876,99</td></tr>
-      <tr><td>Imposto Meta (13,83%)</td><td class="right">R$ 121,29</td></tr>
-      <tr><td class="strong">CUSTO TOTAL</td><td class="right strong">R$ 998,28</td></tr>
+      <tr><td>Investimento Meta Ads</td><td class="right">R$ 1.198,27</td></tr>
+      <tr><td>Imposto Meta (13,83%)</td><td class="right">R$ 165,72</td></tr>
+      <tr><td class="strong">CUSTO TOTAL</td><td class="right strong">R$ 1.363,99</td></tr>
     </tbody>
   </table>
 
@@ -345,22 +346,22 @@
   <table>
     <thead><tr><th>Produto</th><th class="right">Preço unit.</th><th class="right">Vendas pagas</th><th class="right">Receita</th></tr></thead>
     <tbody>
-      <tr><td>Consulta Rating Bancário</td><td class="right">R$ 79,90</td><td class="right">11</td><td class="right">R$ 878,90</td></tr>
-      <tr><td>Boas Práticas (order bump)</td><td class="right">R$ 9,90</td><td class="right">2</td><td class="right">R$ 19,80</td></tr>
-      <tr><td class="strong">TOTAL</td><td class="right strong">—</td><td class="right strong">13</td><td class="right strong ok">R$ 898,70</td></tr>
+      <tr><td>Consulta Rating Bancário</td><td class="right">R$ 79,90</td><td class="right">17</td><td class="right">R$ 1.358,30</td></tr>
+      <tr><td>Boas Práticas (order bump)</td><td class="right">R$ 9,90</td><td class="right">3</td><td class="right">R$ 29,70</td></tr>
+      <tr><td class="strong">TOTAL</td><td class="right strong">—</td><td class="right strong">20</td><td class="right strong ok">R$ 1.388,00</td></tr>
     </tbody>
   </table>
 
   <h3>Resultado</h3>
   <table>
     <tbody>
-      <tr><td>Receita (valor do produto)</td><td class="right">R$ 898,70</td></tr>
-      <tr><td>Custo total</td><td class="right">−R$ 998,28</td></tr>
-      <tr><td class="strong">RESULTADO</td><td class="right strong bad">−R$ 99,58</td></tr>
-      <tr><td>ROAS</td><td class="right">0,90×</td></tr>
-      <tr><td>Recuperação do investimento</td><td class="right">90,0%</td></tr>
-      <tr><td>CPA real (com imposto)</td><td class="right">R$ 76,79</td></tr>
-      <tr><td>Ticket médio (com OB diluído)</td><td class="right">R$ 69,13</td></tr>
+      <tr><td>Receita (valor do produto)</td><td class="right">R$ 1.388,00</td></tr>
+      <tr><td>Custo total</td><td class="right">−R$ 1.363,99</td></tr>
+      <tr><td class="strong">RESULTADO</td><td class="right strong win">+R$ 24,01</td></tr>
+      <tr><td>ROAS</td><td class="right">1,02×</td></tr>
+      <tr><td>Recuperação do investimento</td><td class="right">101,8%</td></tr>
+      <tr><td>CPA real (com imposto)</td><td class="right">R$ 68,20</td></tr>
+      <tr><td>Ticket médio (com OB diluído)</td><td class="right">R$ 69,40</td></tr>
     </tbody>
   </table>
 
@@ -369,17 +370,17 @@
   <table>
     <thead><tr><th>Status</th><th class="right">Qtd</th><th>Observação</th></tr></thead>
     <tbody>
-      <tr><td class="strong ok">✅ Pagos</td><td class="right strong">13</td><td>Vendas confirmadas — entram na receita</td></tr>
-      <tr><td>🟡 PIX Pendentes</td><td class="right">11</td><td>R$ 748,90 em potencial — historicamente 40-60% convertem</td></tr>
-      <tr><td class="bad">🔴 Reembolsados</td><td class="right">3</td><td>R$ 239,70 em devoluções (descontados)</td></tr>
+      <tr><td class="strong ok">✅ Pagos</td><td class="right strong">20</td><td>Vendas confirmadas — entram na receita</td></tr>
+      <tr><td>🟡 PIX Pendentes</td><td class="right">14</td><td>R$ 988,60 em potencial — fluxo de recuperação ainda urgente</td></tr>
+      <tr><td class="bad">🔴 Reembolsados</td><td class="right">3</td><td>R$ 239,70 em devoluções</td></tr>
       <tr><td class="bad">🔴 Cartão Recusado</td><td class="right">1</td><td>Cartão recusado pelo banco emissor</td></tr>
-      <tr><td class="strong">Total entradas</td><td class="right strong">28</td><td>Período: 18-22/jun</td></tr>
+      <tr><td class="strong">Total entradas</td><td class="right strong">38</td><td>Período: 18-24/jun</td></tr>
     </tbody>
   </table>
 
   <div class="note">
     <strong>Potencial se 50% dos PIX pendentes converterem</strong>
-    +5 vendas ≈ +R$ 374,45 → receita iria pra ~R$ 1.273,15 → ROAS subiria pra 1,28× (break-even superado). Vale a pena estruturar fluxo de recuperação WhatsApp em 30min / 2h / 24h pra capturar isso.
+    +7 vendas ≈ +R$ 494,30 → receita iria pra ~R$ 1.882 → ROAS subiria pra 1,38× → lucro de ~R$ 518. Implementar recuperação PIX (WhatsApp 30min/2h/24h) continua sendo a alavanca mais barata.
   </div>
 
   <!-- FUNIL VISUAL -->
@@ -392,15 +393,15 @@
       <div class="stage-title">Impressões</div>
       <div class="stage-metrics">
         <div class="stage-metric big">
-          <div class="metric-value">25.484</div>
+          <div class="metric-value">33.538</div>
           <div class="metric-label">Volume</div>
         </div>
         <div class="stage-metric">
-          <div class="metric-value">R$ 34,41</div>
+          <div class="metric-value">R$ 35,73</div>
           <div class="metric-label">CPM</div>
         </div>
         <div class="stage-metric">
-          <div class="metric-value">1,08</div>
+          <div class="metric-value">1,07</div>
           <div class="metric-label">Frequência</div>
         </div>
       </div>
@@ -412,15 +413,15 @@
       <div class="stage-title">Cliques no Link</div>
       <div class="stage-metrics">
         <div class="stage-metric big">
-          <div class="metric-value">386</div>
+          <div class="metric-value">533</div>
           <div class="metric-label">Volume</div>
         </div>
         <div class="stage-metric">
-          <div class="metric-value">R$ 2,27</div>
+          <div class="metric-value">R$ 2,25</div>
           <div class="metric-label">CPC link</div>
         </div>
         <div class="stage-metric">
-          <div class="metric-value">1,52%</div>
+          <div class="metric-value">1,59%</div>
           <div class="metric-label">CTR</div>
         </div>
       </div>
@@ -432,19 +433,19 @@
       <div class="stage-title">Visualizações da Página</div>
       <div class="stage-metrics four">
         <div class="stage-metric big">
-          <div class="metric-value">285</div>
+          <div class="metric-value">392</div>
           <div class="metric-label">Volume</div>
         </div>
         <div class="stage-metric">
-          <div class="metric-value">R$ 3,08</div>
+          <div class="metric-value">R$ 3,06</div>
           <div class="metric-label">Custo/LP view</div>
         </div>
         <div class="stage-metric">
-          <div class="metric-value">73,8%</div>
+          <div class="metric-value">73,5%</div>
           <div class="metric-label">Click → LP</div>
         </div>
         <div class="stage-metric win">
-          <div class="metric-value">4,56%</div>
+          <div class="metric-value">5,10%</div>
           <div class="metric-label">LP → Venda</div>
         </div>
       </div>
@@ -456,15 +457,15 @@
       <div class="stage-title">Chegou no Checkout</div>
       <div class="stage-metrics">
         <div class="stage-metric big">
-          <div class="metric-value">83</div>
+          <div class="metric-value">110</div>
           <div class="metric-label">Volume</div>
         </div>
         <div class="stage-metric">
-          <div class="metric-value">R$ 10,57</div>
+          <div class="metric-value">R$ 10,89</div>
           <div class="metric-label">Custo/IC</div>
         </div>
         <div class="stage-metric">
-          <div class="metric-value">29,1%</div>
+          <div class="metric-value">28,1%</div>
           <div class="metric-label">LP → Checkout</div>
         </div>
       </div>
@@ -476,15 +477,15 @@
       <div class="stage-title">Vendas Pagas</div>
       <div class="stage-metrics">
         <div class="stage-metric big">
-          <div class="metric-value">13</div>
+          <div class="metric-value">20</div>
           <div class="metric-label">Volume</div>
         </div>
         <div class="stage-metric">
-          <div class="metric-value">R$ 67,46</div>
+          <div class="metric-value">R$ 59,91</div>
           <div class="metric-label">CPA</div>
         </div>
         <div class="stage-metric">
-          <div class="metric-value">15,7%</div>
+          <div class="metric-value">18,2%</div>
           <div class="metric-label">Checkout → Venda</div>
         </div>
       </div>
@@ -494,7 +495,7 @@
 
   <!-- COMPARATIVO POR PÁGINA -->
   <h2>Performance por Página (V1 vs V2)</h2>
-  <p>Comparação direta das duas páginas de vendas com o <strong>mesmo investimento</strong> (~R$ 437 cada). Veja como a página V2 transforma o mesmo tráfego em quase o dobro de vendas.</p>
+  <p>Comparação direta das duas páginas. A <strong>V2 continua à frente</strong>, mas a V1 melhorou bastante (subiu de 3,21% pra 4,21% de conversão).</p>
 
   <div class="pages-grid">
 
@@ -505,27 +506,27 @@
       <div class="page-stats">
         <div class="page-stat">
           <div class="ps-label">Visualizações</div>
-          <div class="ps-value">156</div>
+          <div class="ps-value">214</div>
         </div>
         <div class="page-stat">
           <div class="ps-label">Vendas pagas</div>
-          <div class="ps-value">5</div>
+          <div class="ps-value">9</div>
         </div>
         <div class="page-stat">
           <div class="ps-label">Conv. LP→Venda</div>
-          <div class="ps-value">3,21%</div>
+          <div class="ps-value">4,21%</div>
         </div>
         <div class="page-stat">
           <div class="ps-label">CPA Meta</div>
-          <div class="ps-value">R$ 87,59</div>
+          <div class="ps-value">R$ 65,27</div>
         </div>
         <div class="page-stat">
           <div class="ps-label">Investido</div>
-          <div class="ps-value">R$ 437,93</div>
+          <div class="ps-value">R$ 587,46</div>
         </div>
         <div class="page-stat">
           <div class="ps-label">ROAS</div>
-          <div class="ps-value">0,75×</div>
+          <div class="ps-value">0,99×</div>
         </div>
       </div>
     </div>
@@ -537,27 +538,27 @@
       <div class="page-stats">
         <div class="page-stat">
           <div class="ps-label">Visualizações</div>
-          <div class="ps-value">129</div>
+          <div class="ps-value">178</div>
         </div>
         <div class="page-stat highlight">
           <div class="ps-label">Vendas pagas</div>
-          <div class="ps-value">8</div>
+          <div class="ps-value">11</div>
         </div>
         <div class="page-stat highlight">
           <div class="ps-label">Conv. LP→Venda</div>
-          <div class="ps-value">6,20%</div>
+          <div class="ps-value">6,18%</div>
         </div>
         <div class="page-stat highlight">
           <div class="ps-label">CPA Meta</div>
-          <div class="ps-value">R$ 54,71</div>
+          <div class="ps-value">R$ 55,26</div>
         </div>
         <div class="page-stat">
           <div class="ps-label">Investido</div>
-          <div class="ps-value">R$ 437,64</div>
+          <div class="ps-value">R$ 607,90</div>
         </div>
         <div class="page-stat highlight">
           <div class="ps-label">ROAS</div>
-          <div class="ps-value">1,30×</div>
+          <div class="ps-value">1,33×</div>
         </div>
       </div>
     </div>
@@ -565,42 +566,8 @@
   </div>
 
   <div class="note win">
-    <strong>A V2 converte quase o DOBRO da V1</strong>
-    Mesmo orçamento, mas a V2 faz 6,20% de conversão LP→Venda contra 3,21% da V1. Em CPA: R$ 54,71 (V2) vs R$ 87,59 (V1). A LP mais direta validou — recomendação é migrar 100% do orçamento pra V2 e descansar a V1.
-  </div>
-
-  <div class="note">
-    <strong>Funil — pontos fortes e fracos</strong>
-    ✅ <strong>LP view (73,8%)</strong> e <strong>chegada no checkout (29,1%)</strong> estão bem.<br>
-    ⚠️ <strong>Checkout → Venda (15,7%)</strong> ainda longe do benchmark (25-40%). Esse é o próximo gargalo a destravar — recuperação automática de PIX é o caminho mais barato pra subir esse número.
-  </div>
-
-  <!-- POR CAMPANHA -->
-  <h2>Vendas por Campanha</h2>
-  <table>
-    <thead><tr><th>Campanha</th><th class="right">Gasto</th><th class="right">Vendas</th><th class="right">CPA</th><th class="right">ROAS</th><th>Status</th></tr></thead>
-    <tbody>
-      <tr>
-        <td class="strong">[07] PADRÃO V2 (LP nova)</td>
-        <td class="right">R$ 437,64</td>
-        <td class="right strong">8</td>
-        <td class="right">R$ 54,71</td>
-        <td class="right ok"><strong>1,30×</strong></td>
-        <td><span class="badge winner">Lucrativa</span></td>
-      </tr>
-      <tr>
-        <td>[06] PADRÃO V1 (LP antiga)</td>
-        <td class="right">R$ 437,93</td>
-        <td class="right">5</td>
-        <td class="right">R$ 87,59</td>
-        <td class="right">0,75×</td>
-        <td><span class="badge gray">Deficitária</span></td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="note win">
-    <strong>LP V2 venceu a V1 com folga</strong>
-    Mesmo orçamento (R$ 437 cada), mas a LP V2 trouxe 60% mais vendas e ROAS quase 75% maior. Recomendo migrar 100% do budget pra [07] na próxima rodada.
+    <strong>A V2 continua na frente, mas a V1 deu um salto</strong>
+    V2 = 6,18% conv (estável) · V1 saltou de 3,21% pra 4,21% (+31%). Hipótese: o tráfego está aprendendo melhor com a CAPI rodando há mais tempo. A V2 ainda gera 47% mais conversão que a V1 — recomendação de migrar verba pra V2 continua válida.
   </div>
 
   <!-- POR CRIATIVO -->
@@ -611,31 +578,31 @@
       <tr>
         <td class="strong">⭐ ADV06 — Por que Reprovado</td>
         <td>[07] V2</td>
-        <td class="right">R$ 41,31</td>
+        <td class="right">R$ 62,46</td>
         <td class="right strong">3</td>
-        <td class="right win">R$ 13,77</td>
-        <td class="right win"><strong>4,10×</strong></td>
+        <td class="right win">R$ 20,82</td>
+        <td class="right win"><strong>2,72×</strong></td>
+      </tr>
+      <tr>
+        <td>ADV07 — Como Saber Rating</td>
+        <td>[06] V1</td>
+        <td class="right">R$ 539,38</td>
+        <td class="right">9</td>
+        <td class="right">R$ 59,93</td>
+        <td class="right ok">1,07×</td>
       </tr>
       <tr>
         <td>ADV07 — Como Saber Rating</td>
         <td>[07] V2</td>
-        <td class="right">R$ 396,33</td>
-        <td class="right">5</td>
-        <td class="right">R$ 79,27</td>
-        <td class="right ok">1,01×</td>
-      </tr>
-      <tr>
-        <td>ADV07 — Como Saber Rating</td>
-        <td>[06] V1</td>
-        <td class="right">R$ 403,33</td>
-        <td class="right">5</td>
-        <td class="right">R$ 80,67</td>
-        <td class="right">0,82×</td>
+        <td class="right">R$ 545,54</td>
+        <td class="right">8</td>
+        <td class="right">R$ 68,19</td>
+        <td class="right ok">1,17×</td>
       </tr>
       <tr>
         <td>ADV06 — Por que Reprovado</td>
         <td>[06] V1</td>
-        <td class="right">R$ 34,67</td>
+        <td class="right">R$ 48,59</td>
         <td class="right bad">0</td>
         <td class="right">—</td>
         <td class="right bad">0,00×</td>
@@ -644,8 +611,8 @@
   </table>
 
   <div class="note">
-    <strong>Observação importante: o mesmo criativo, em LPs diferentes, performou de forma oposta</strong>
-    O ADV06 fez 4,10× ROAS na LP V2 e 0× ROAS na LP V1 — prova de que <strong>não é o criativo, é a combinação criativo × página</strong>. Reforça por que vamos parar a LP V1.
+    <strong>ADV06 + LP V2 segue como o combo mais rentável</strong>
+    Mesmo após mais 2 dias de dados, o ADV06 na LP V2 segue com o melhor CPA (R$ 20,82) e ROAS (2,72×). O ROAS desceu de 4,10× pra 2,72× (esperado — regressão natural com mais volume), mas continua o melhor dos 4 combos. ADV07 está estável e bem nas duas LPs.
   </div>
 
   <!-- MELHORES CRIATIVOS -->
@@ -655,18 +622,18 @@
     <div class="creative-info">
       <div class="name">⭐ ADV06 — Por que Financiamento Reprovado</div>
       <div class="meta">Duração: 0:40 · Combo vencedor com LP V2</div>
-      <div class="stats">ROAS 4,10× · CPA R$ 13,77 · 3 vendas com R$ 41 investidos</div>
+      <div class="stats">ROAS 2,72× · CPA R$ 20,82 · 3 vendas com R$ 62 investidos</div>
     </div>
     <div class="creative-actions">
       <a class="btn" href="https://drive.google.com/file/d/11rQ9H9Dobq0sS68JRREt9DiEiNwi27DT/view?usp=drivesdk" target="_blank" rel="noopener">Ver no Drive</a>
     </div>
   </div>
 
-  <div class="creative-card">
+  <div class="creative-card winner">
     <div class="creative-info">
-      <div class="name">ADV07 — Como Saber Rating Bancário</div>
-      <div class="meta">Duração: 0:29 · Funciona nas duas LPs</div>
-      <div class="stats">10 vendas · ROAS 1,01× (V2) e 0,82× (V1) · Volume estável</div>
+      <div class="name">⭐ ADV07 — Como Saber Rating Bancário</div>
+      <div class="meta">Duração: 0:29 · Funciona bem nas duas LPs</div>
+      <div class="stats">17 vendas · ROAS 1,17× (V2) e 1,07× (V1) · Sustenta o volume</div>
     </div>
     <div class="creative-actions">
       <a class="btn" href="https://drive.google.com/file/d/10bQNUfmtQ8XYngRhrdt9WBF5iHc53eqN/view?usp=drivesdk" target="_blank" rel="noopener">Ver no Drive</a>
@@ -676,10 +643,11 @@
   <!-- ANÁLISE ESTRATÉGICA -->
   <h2>Análise Estratégica</h2>
   <div class="message">
-    <p><strong>1. A LP V2 está validada.</strong> 60% mais vendas e ROAS 75% maior que a V1 com o mesmo investimento. Próxima campanha: 100% no V2.</p>
-    <p><strong>2. ADV06 + LP V2 é uma descoberta importante.</strong> Mesmo criativo que "morreu" em maio voltou à vida com a nova LP. ROAS 4,10× com pouco volume — escalando com cautela, pode multiplicar o resultado.</p>
-    <p><strong>3. Funil melhorando consistentemente.</strong> CTR 1,24% → 1,52% / Checkout→Venda 14,7% → 15,7%. Direção certa, mas ainda há gap pro benchmark (25-40% no checkout).</p>
-    <p><strong>4. 11 PIX pendentes (R$ 748) é dinheiro deixado na mesa.</strong> Implementar fluxo automático de recuperação WhatsApp (30min, 2h, 24h) é a alavanca mais barata e rápida pra subir o ROAS.</p>
+    <p><strong>1. A operação virou positiva.</strong> Pela primeira vez o ROAS passou de 1× (1,02×). Ainda apertado, mas a tendência é clara: cada novo dia melhorou em relação ao anterior.</p>
+    <p><strong>2. ADV06 + LP V2 segue como combo de elite.</strong> Mantém o melhor CPA (R$ 20,82) mesmo com mais volume. Vale escalar com cuidado — todo aumento aqui multiplica o lucro.</p>
+    <p><strong>3. ADV07 estabilizou em ~R$ 60-68 de CPA</strong> nas duas LPs. É o criativo de volume, ADV06 é o de eficiência. Boa combinação.</p>
+    <p><strong>4. LP V1 está melhorando.</strong> Subiu de 3,21% pra 4,21% de conversão — sinal de que o algoritmo do Meta tá entregando melhor. Mas V2 ainda é 47% mais eficiente.</p>
+    <p><strong>5. 14 PIX pendentes (R$ 988,60) seguem como a maior alavanca.</strong> Se converter metade, o lucro mensal pula de ~R$ 100 pra ~R$ 1.000+.</p>
   </div>
 
   <!-- PRÓXIMOS PASSOS -->
@@ -687,19 +655,19 @@
   <table>
     <thead><tr><th>#</th><th>Ação</th><th>Prioridade</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td class="strong">Pausar campanha [06] (LP V1) — migrar verba pra [07] (LP V2)</td><td><span class="badge alert">Alta</span></td></tr>
-      <tr><td>2</td><td class="strong">Subir budget do ADV06 dentro da camp [07]</td><td><span class="badge alert">Alta</span></td></tr>
+      <tr><td>1</td><td class="strong">Migrar 70-100% do budget pra camp [07] (LP V2)</td><td><span class="badge alert">Alta</span></td></tr>
+      <tr><td>2</td><td class="strong">Subir budget do ADV06 dentro da camp [07] gradualmente</td><td><span class="badge alert">Alta</span></td></tr>
       <tr><td>3</td><td class="strong">Implementar recuperação PIX automática (30min/2h/24h)</td><td><span class="badge alert">Alta</span></td></tr>
       <tr><td>4</td><td>Produzir 3-5 variações do ADV06 e ADV07 (nova leva)</td><td><span class="badge">Média</span></td></tr>
       <tr><td>5</td><td>Avaliar Avatar IA (HeyGen, R$ 30-40/vídeo) pra acelerar produção</td><td><span class="badge">Média</span></td></tr>
-      <tr><td>6</td><td>Continuar monitorando conversão de PIX vs. vendas reais</td><td><span class="badge">Contínua</span></td></tr>
+      <tr><td>6</td><td>Continuar monitorando ROAS — alvo: 1,30× nas próximas 2 semanas</td><td><span class="badge">Contínua</span></td></tr>
     </tbody>
   </table>
 
   <footer>
-    Relatório gerado em <strong>22 de junho de 2026</strong> · Brito Mídias<br>
+    Relatório gerado em <strong>24 de junho de 2026 às 17:52</strong> · Brito Mídias<br>
     Gestão de Tráfego Pago · Conta Meta: 944689576621206<br>
-    Período: 18 a 22/jun/2026 · Plataforma de vendas: Kiwify
+    Período: 18 a 24/jun/2026 · Plataforma de vendas: Kiwify
   </footer>
 
 </div>
