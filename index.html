@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relatório RTKB · Iarla Pugliesi · 18–24/jun</title>
+<title>Relatório Geral · RTKB · Iarla Pugliesi · 21/mai a 30/jun</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,27 +12,21 @@
     --bg: #0a0a0f;
     --bg-elevated: #14141c;
     --bg-card: #1a1a24;
-    --bg-table-row: #15151e;
     --border: #2a2a38;
     --border-soft: #1f1f2a;
-
     --white: #ffffff;
     --text: #ffffff;
     --text-soft: #c2c2d0;
     --text-muted: #7a7a8a;
-
     --purple: #8b5cf6;
     --purple-bright: #a78bfa;
     --purple-deep: #7c3aed;
-    --purple-dark: #6d28d9;
     --purple-soft-bg: rgba(139, 92, 246, 0.12);
     --purple-border: rgba(139, 92, 246, 0.25);
-
     --red: #ef4444;
     --red-bright: #f87171;
     --red-soft-bg: rgba(239, 68, 68, 0.12);
     --red-border: rgba(239, 68, 68, 0.3);
-
     --green: #22c55e;
     --green-bright: #4ade80;
     --green-soft-bg: rgba(34, 197, 94, 0.12);
@@ -41,63 +35,38 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.55;
-    font-weight: 400;
+    background: var(--bg); color: var(--text); line-height: 1.55; font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
   .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px 60px; }
   header {
     background: linear-gradient(135deg, #14141c 0%, #1f1530 100%);
-    color: var(--white);
-    padding: 38px 20px;
-    text-align: center;
+    color: var(--white); padding: 38px 20px; text-align: center;
     border-bottom: 3px solid var(--purple);
   }
-  header .brand { font-size: 11px; letter-spacing: 3px; opacity: 0.85; text-transform: uppercase; margin-bottom: 10px; color: var(--purple-bright); font-weight: 500;}
+  header .brand { font-size: 11px; letter-spacing: 3px; opacity: 0.85; text-transform: uppercase; margin-bottom: 10px; color: var(--purple-bright); font-weight: 500; }
   header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
+  header .subtitle { font-size: 13px; color: var(--purple-bright); font-weight: 500; margin-bottom: 4px; }
   header .period { font-size: 13px; color: var(--text-soft); font-weight: 300; }
-
   h2 {
-    font-size: 17px;
-    text-transform: uppercase;
-    letter-spacing: 1.8px;
-    margin: 44px 0 18px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-    color: var(--white);
-    font-weight: 600;
-    position: relative;
+    font-size: 17px; text-transform: uppercase; letter-spacing: 1.8px;
+    margin: 44px 0 18px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--border); color: var(--white); font-weight: 600; position: relative;
   }
   h2::before { content: ''; position: absolute; bottom: -1px; left: 0; width: 60px; height: 1px; background: var(--purple); }
   h3 { font-size: 14px; font-weight: 600; margin: 22px 0 10px; color: var(--purple-bright); letter-spacing: 0.3px; }
   p { margin-bottom: 14px; font-size: 14.5px; color: var(--text-soft); font-weight: 300; }
   p strong { color: var(--white); font-weight: 600; }
-
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 22px 0; }
-  .card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 18px 16px;
-    border-radius: 10px;
-    transition: border-color 0.2s;
-  }
+  .card { background: var(--bg-card); border: 1px solid var(--border); padding: 18px 16px; border-radius: 10px; transition: border-color 0.2s; }
   .card:hover { border-color: var(--purple-border); }
   .card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); margin-bottom: 8px; font-weight: 500; }
   .card .value { font-size: 22px; font-weight: 700; color: var(--white); letter-spacing: -0.3px; }
   .card .sub { font-size: 11.5px; color: var(--text-muted); margin-top: 5px; font-weight: 300; }
-  .card.positive { border-left: 3px solid var(--purple); }
-  .card.positive .value { color: var(--purple-bright); }
-  .card.negative { border-left: 3px solid var(--text-muted); }
-  .card.negative .value { color: var(--white); }
-  .card.warn { border-left: 3px solid var(--purple-deep); }
-  .card.warn .value { color: var(--purple-bright); }
-  .card.alert { border-left: 3px solid var(--red); }
-  .card.alert .value { color: var(--red-bright); }
-  .card.win { border-left: 3px solid var(--green); }
-  .card.win .value { color: var(--green-bright); }
-
+  .card.positive { border-left: 3px solid var(--purple); } .card.positive .value { color: var(--purple-bright); }
+  .card.negative { border-left: 3px solid var(--text-muted); } .card.negative .value { color: var(--white); }
+  .card.alert { border-left: 3px solid var(--red); } .card.alert .value { color: var(--red-bright); }
+  .card.win { border-left: 3px solid var(--green); } .card.win .value { color: var(--green-bright); }
   table {
     width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 13.5px;
     background: var(--bg-card); border-radius: 10px; overflow: hidden; border: 1px solid var(--border);
@@ -106,152 +75,44 @@
   td { padding: 12px 14px; border-bottom: 1px solid var(--border-soft); color: var(--text-soft); font-weight: 300; }
   td strong, .strong { font-weight: 600; color: var(--white); }
   tr:last-child td { border-bottom: none; }
+  tr.total-row td { background: var(--purple-soft-bg); border-top: 2px solid var(--purple); font-weight: 600; color: var(--white); }
   tr:hover td { background: rgba(139, 92, 246, 0.04); }
   .right { text-align: right; font-variant-numeric: tabular-nums; }
   .ok { color: var(--purple-bright); font-weight: 600; }
   .bad { color: var(--red-bright); font-weight: 600; }
   .win { color: var(--green-bright); font-weight: 700; }
-  .neutral { color: var(--white); font-weight: 600; }
-
-  .note {
-    background: var(--purple-soft-bg); border: 1px solid var(--purple-border); border-left: 3px solid var(--purple);
-    padding: 18px 20px; margin: 22px 0; border-radius: 8px; font-size: 14px; color: var(--text-soft); font-weight: 300;
-  }
+  .note { background: var(--purple-soft-bg); border: 1px solid var(--purple-border); border-left: 3px solid var(--purple); padding: 18px 20px; margin: 22px 0; border-radius: 8px; font-size: 14px; color: var(--text-soft); font-weight: 300; }
   .note strong { display: block; margin-bottom: 6px; color: var(--purple-bright); font-weight: 600; }
   .note.win { background: var(--green-soft-bg); border-color: var(--green-border); border-left-color: var(--green); }
   .note.win strong { color: var(--green-bright); }
-  .note.warn { background: var(--red-soft-bg); border-color: var(--red-border); border-left-color: var(--red); }
-  .note.warn strong { color: var(--red-bright); }
-
-  .message {
-    background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--purple);
-    padding: 22px 24px; margin: 18px 0; border-radius: 8px;
-  }
+  .message { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--purple); padding: 22px 24px; margin: 18px 0; border-radius: 8px; }
   .message p { font-size: 14.5px; color: var(--text-soft); font-weight: 300; }
   .message p:last-child { margin-bottom: 0; }
   .message strong { color: var(--white); font-weight: 600; }
-
-  .creative-card {
-    background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
-    padding: 18px 20px; margin-bottom: 12px;
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
-    transition: border-color 0.15s;
-  }
-  .creative-card:hover { border-color: var(--purple-border); }
-  .creative-card.winner { border-left: 3px solid var(--green); }
-  .creative-info .name { font-weight: 600; font-size: 14px; color: var(--white); }
-  .creative-info .meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; font-weight: 300; }
-  .creative-info .stats { font-size: 12px; color: var(--purple-bright); margin-top: 4px; font-weight: 500; }
-  .creative-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-  .btn {
-    display: inline-block; background: var(--purple); color: var(--white); text-decoration: none;
-    padding: 8px 14px; border-radius: 6px; font-size: 11.5px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.8px; transition: background 0.15s, transform 0.1s;
-  }
-  .btn:hover { background: var(--purple-deep); transform: translateY(-1px); }
   .badge { display: inline-block; background: var(--purple); color: var(--white); padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.3px; }
   .badge.gray { background: var(--border); color: var(--text-muted); }
   .badge.winner { background: var(--green); }
-  .badge.alert { background: var(--red); }
-
+  .badge.paused { background: var(--red); opacity: 0.55; }
   footer { text-align: center; margin-top: 60px; padding-top: 26px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 12px; font-weight: 300; }
   footer strong { color: var(--purple-bright); font-weight: 600; }
   a { color: var(--purple-bright); }
-
-  /* === FUNIL VISUAL === */
-  .funnel-container {
-    margin: 24px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    max-width: 760px;
-  }
-  .funnel-stage {
-    width: 100%;
-    padding: 16px 24px 14px;
-    background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple) 100%);
-    color: var(--white);
-    border-radius: 10px;
-    border: 1px solid var(--purple-bright);
-    transition: transform 0.15s;
-  }
-  .funnel-stage:hover { transform: scale(1.01); }
-  .funnel-stage.s1 { max-width: 100%; }
-  .funnel-stage.s2 { max-width: 88%; }
-  .funnel-stage.s3 { max-width: 76%; }
-  .funnel-stage.s4 { max-width: 64%; }
-  .funnel-stage.s5 {
-    max-width: 52%;
-    background: linear-gradient(135deg, var(--purple) 0%, var(--green) 100%);
-    border-color: var(--green-bright);
-  }
-  .funnel-arrow {
-    width: 0; height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 9px solid var(--purple-bright);
-    opacity: 0.5;
-  }
-  .stage-title {
-    font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
-    opacity: 0.85; margin-bottom: 10px; font-weight: 600; text-align: center;
-  }
-  .stage-metrics {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px; align-items: center;
-  }
-  .stage-metric { text-align: center; }
-  .metric-value { font-size: 17px; font-weight: 700; line-height: 1.1; color: var(--white); }
-  .metric-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: 1.2px; opacity: 0.75; margin-top: 4px; font-weight: 500; }
-  .stage-metric.big .metric-value { font-size: 22px; }
-  .stage-metrics.four { grid-template-columns: 1fr 1fr 1fr 1fr; }
-  .stage-metric.win .metric-value { color: var(--green-bright); }
-
-  /* === PÁGINA COMPARISON === */
-  .pages-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin: 20px 0;
-  }
-  .page-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px;
-    transition: border-color 0.15s;
-  }
-  .page-card.winner { border-color: var(--green-border); border-left: 3px solid var(--green); }
-  .page-card.loser { border-left: 3px solid var(--text-muted); }
-  .page-card .page-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 600; margin-bottom: 4px; }
-  .page-card .page-name { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
-  .page-card.winner .page-name { color: var(--green-bright); }
-  .page-card .page-url {
-    display: inline-block;
-    font-size: 11px;
-    color: var(--purple-bright);
-    text-decoration: none;
-    margin-bottom: 14px;
-    word-break: break-all;
-    font-weight: 500;
-  }
-  .page-card .page-url:hover { text-decoration: underline; }
-  .page-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .page-stat { padding: 10px 12px; background: var(--bg-elevated); border-radius: 6px; }
-  .page-stat .ps-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 500; margin-bottom: 3px; }
-  .page-stat .ps-value { font-size: 16px; font-weight: 700; color: var(--white); }
-  .page-stat.highlight .ps-value { color: var(--green-bright); }
+  .platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+  .platform-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+  .platform-card.zouti { border-left: 3px solid var(--text-muted); }
+  .platform-card.kiwify { border-left: 3px solid var(--green); }
+  .platform-name { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .platform-status { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); font-weight: 500; margin-bottom: 14px; }
+  .platform-card.kiwify .platform-name { color: var(--green-bright); }
+  .platform-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .platform-stat { padding: 10px 12px; background: var(--bg-elevated); border-radius: 6px; }
+  .platform-stat .ps-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 500; margin-bottom: 3px; }
+  .platform-stat .ps-value { font-size: 16px; font-weight: 700; color: var(--white); }
 
   @media (max-width: 600px) {
-    .pages-grid { grid-template-columns: 1fr; }
-    .funnel-stage.s1, .funnel-stage.s2, .funnel-stage.s3, .funnel-stage.s4, .funnel-stage.s5 {
-      max-width: 100%;
-    }
-    .stage-metrics, .stage-metrics.four { grid-template-columns: 1fr; gap: 6px; }
-    .stage-metric { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; }
-    .metric-label { margin-top: 0; }
+    header h1 { font-size: 22px; } header { padding: 30px 20px; }
+    h2 { font-size: 15px; } .card .value { font-size: 18px; }
+    table { font-size: 12.5px; } th, td { padding: 9px 10px; }
+    .platform-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -259,415 +120,171 @@
 
 <header>
   <div class="brand">Brito Mídias · Gestão de Tráfego</div>
-  <h1>Relatório RTKB — Iarla Pugliesi</h1>
-  <div class="period">Período: 18 a 24 de junho de 2026 · 7 dias · Atualizado às 17:52</div>
+  <h1>Relatório Geral RTKB — Iarla Pugliesi</h1>
+  <div class="subtitle">Visão consolidada de toda a operação</div>
+  <div class="period">Período: 21 de maio a 30 de junho de 2026 · 40 dias</div>
 </header>
 
 <div class="wrap">
 
-  <!-- MENSAGEM DO GESTOR -->
   <h2>Mensagem do Gestor</h2>
   <div class="message">
-    <p>Iarla, atualização dos últimos 7 dias (18 a 24/jun). <strong>Notícia importante: a operação virou positiva.</strong></p>
-    <p>O <strong>ROAS subiu de 0,90× pra 1,02×</strong> e a operação está com lucro pela primeira vez (R$ 24,01). Ainda apertado, mas saímos do prejuízo. E mais importante: a tendência continua subindo (LP→Venda passou de 4,56% pra 5,10%).</p>
-    <p>O ADV07 está bem nas duas LPs e o ADV06 mantém o melhor CPA (R$ 20,82 na LP V2). A LP V1 também melhorou bastante: passou de 3,21% pra 4,21% de conversão.</p>
+    <p>Iarla, segue o relatório geral consolidando <strong>todo o histórico das campanhas RTKB</strong> desde o início (21/mai) até 30/jun. Considera:</p>
+    <p>• <strong>8 campanhas RTKB</strong> criadas no período (7 rodaram, 1 sem entrega)<br>
+    • <strong>Duas plataformas de vendas usadas</strong> — Zouti (descontinuada) e Kiwify (ativa)<br>
+    • <strong>53 vendas pagas</strong> no total, além de 24 PIX pendentes atualmente<br>
+    • Receita calculada pelo <strong>valor bruto do produto</strong> (R$ 79,90 principal + valores originais dos OBs)</p>
+    <p>A operação ainda está deficitária no acumulado (−R$ 4.373,49) por causa do peso das campanhas iniciais [01]-[05] que tiveram tracking ruim e CPA alto. As duas últimas campanhas ([06] e [07]) já operam próximo do break-even (últimos 7 dias com ROAS 1,02×).</p>
   </div>
 
-  <!-- RESUMO EXECUTIVO -->
-  <h2>Resumo Executivo</h2>
+  <h2>Resumo Executivo (Lifetime)</h2>
   <div class="cards">
-    <div class="card negative">
-      <div class="label">Investimento Meta</div>
-      <div class="value">R$ 1.198,27</div>
-      <div class="sub">+ R$ 165,72 imposto (13,83%)</div>
-    </div>
-    <div class="card negative">
-      <div class="label">Custo Total</div>
-      <div class="value">R$ 1.363,99</div>
-      <div class="sub">Meta + impostos</div>
-    </div>
-    <div class="card positive">
-      <div class="label">Receita (valor produto)</div>
-      <div class="value">R$ 1.388,00</div>
-      <div class="sub">17 principal + 3 order bump</div>
-    </div>
-    <div class="card win">
-      <div class="label">Vendas Pagas</div>
-      <div class="value">20</div>
-      <div class="sub">+ 14 PIX pendentes</div>
-    </div>
-    <div class="card win">
-      <div class="label">Resultado</div>
-      <div class="value">+R$ 24,01</div>
-      <div class="sub">Operação no positivo 🎉</div>
-    </div>
-    <div class="card win">
-      <div class="label">ROAS</div>
-      <div class="value">1,02×</div>
-      <div class="sub">Antes: 0,90× (+13%)</div>
-    </div>
+    <div class="card negative"><div class="label">Investimento Meta</div><div class="value">R$ 7.430,37</div><div class="sub">+ R$ 1.027,62 imposto (13,83%)</div></div>
+    <div class="card negative"><div class="label">Custo Total</div><div class="value">R$ 8.457,99</div><div class="sub">Meta + impostos</div></div>
+    <div class="card positive"><div class="label">Receita (valor produto)</div><div class="value">R$ 4.084,50</div><div class="sub">53 vendas pagas</div></div>
+    <div class="card positive"><div class="label">Vendas Pagas</div><div class="value">53</div><div class="sub">Zouti: 23 · Kiwify: 30</div></div>
+    <div class="card alert"><div class="label">Resultado</div><div class="value">−R$ 4.373,49</div><div class="sub">Acumulado 40 dias</div></div>
+    <div class="card alert"><div class="label">ROAS Lifetime</div><div class="value">0,48×</div><div class="sub">Últimos 7d: 1,02× ✅</div></div>
   </div>
 
-  <!-- EVOLUÇÃO -->
-  <h2>📈 Evolução vs Relatório Anterior (18–22/jun)</h2>
+  <h2>Investimento Meta por Mês</h2>
   <table>
-    <thead><tr><th>Indicador</th><th class="right">18–22/jun</th><th class="right">18–24/jun</th><th class="right">Variação</th></tr></thead>
+    <thead><tr><th>Mês</th><th class="right">Dias</th><th class="right">Investimento Meta</th><th class="right">Imposto (13,83%)</th><th class="right">Custo Total</th></tr></thead>
     <tbody>
-      <tr><td>Vendas pagas</td><td class="right">13</td><td class="right strong">20</td><td class="right ok">+54%</td></tr>
-      <tr><td>Receita (valor produto)</td><td class="right">R$ 898,70</td><td class="right strong">R$ 1.388,00</td><td class="right ok">+54%</td></tr>
-      <tr><td>Investimento Meta</td><td class="right">R$ 876,99</td><td class="right">R$ 1.198,27</td><td class="right">+37%</td></tr>
-      <tr><td>Custo total</td><td class="right">R$ 998,28</td><td class="right">R$ 1.363,99</td><td class="right">+37%</td></tr>
-      <tr><td>Resultado</td><td class="right bad">−R$ 99,58</td><td class="right win">+R$ 24,01</td><td class="right win">virou positivo ✅</td></tr>
-      <tr><td>ROAS</td><td class="right">0,90×</td><td class="right strong">1,02×</td><td class="right ok">+13%</td></tr>
-      <tr><td>CTR link</td><td class="right">1,52%</td><td class="right strong">1,59%</td><td class="right ok">+5%</td></tr>
-      <tr><td>Conv. LP → Venda</td><td class="right">4,56%</td><td class="right strong">5,10%</td><td class="right ok">+12%</td></tr>
-      <tr><td>Conv. Checkout → Venda</td><td class="right">15,7%</td><td class="right strong">18,2%</td><td class="right ok">+16%</td></tr>
-    </tbody>
-  </table>
-  <div class="note win">
-    <strong>A receita cresceu mais rápido que o investimento</strong>
-    Aumentamos o budget em 37% e a receita subiu 54%. Isso significa que estamos otimizando — não só comprando mais tráfego, mas convertendo melhor cada real investido.
-  </div>
-
-  <!-- INVESTIMENTO X RETORNO -->
-  <h2>Investimento × Retorno</h2>
-
-  <h3>Custos</h3>
-  <table>
-    <thead><tr><th>Item</th><th class="right">Valor</th></tr></thead>
-    <tbody>
-      <tr><td>Investimento Meta Ads</td><td class="right">R$ 1.198,27</td></tr>
-      <tr><td>Imposto Meta (13,83%)</td><td class="right">R$ 165,72</td></tr>
-      <tr><td class="strong">CUSTO TOTAL</td><td class="right strong">R$ 1.363,99</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Receita pelo valor do produto</h3>
-  <table>
-    <thead><tr><th>Produto</th><th class="right">Preço unit.</th><th class="right">Vendas pagas</th><th class="right">Receita</th></tr></thead>
-    <tbody>
-      <tr><td>Consulta Rating Bancário</td><td class="right">R$ 79,90</td><td class="right">17</td><td class="right">R$ 1.358,30</td></tr>
-      <tr><td>Boas Práticas (order bump)</td><td class="right">R$ 9,90</td><td class="right">3</td><td class="right">R$ 29,70</td></tr>
-      <tr><td class="strong">TOTAL</td><td class="right strong">—</td><td class="right strong">20</td><td class="right strong ok">R$ 1.388,00</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Resultado</h3>
-  <table>
-    <tbody>
-      <tr><td>Receita (valor do produto)</td><td class="right">R$ 1.388,00</td></tr>
-      <tr><td>Custo total</td><td class="right">−R$ 1.363,99</td></tr>
-      <tr><td class="strong">RESULTADO</td><td class="right strong win">+R$ 24,01</td></tr>
-      <tr><td>ROAS</td><td class="right">1,02×</td></tr>
-      <tr><td>Recuperação do investimento</td><td class="right">101,8%</td></tr>
-      <tr><td>CPA real (com imposto)</td><td class="right">R$ 68,20</td></tr>
-      <tr><td>Ticket médio (com OB diluído)</td><td class="right">R$ 69,40</td></tr>
-    </tbody>
-  </table>
-
-  <!-- STATUS PEDIDOS KIWIFY -->
-  <h2>Status dos Pedidos (Kiwify)</h2>
-  <table>
-    <thead><tr><th>Status</th><th class="right">Qtd</th><th>Observação</th></tr></thead>
-    <tbody>
-      <tr><td class="strong ok">✅ Pagos</td><td class="right strong">20</td><td>Vendas confirmadas — entram na receita</td></tr>
-      <tr><td>🟡 PIX Pendentes</td><td class="right">14</td><td>R$ 988,60 em potencial — fluxo de recuperação ainda urgente</td></tr>
-      <tr><td class="bad">🔴 Reembolsados</td><td class="right">3</td><td>R$ 239,70 em devoluções</td></tr>
-      <tr><td class="bad">🔴 Cartão Recusado</td><td class="right">1</td><td>Cartão recusado pelo banco emissor</td></tr>
-      <tr><td class="strong">Total entradas</td><td class="right strong">38</td><td>Período: 18-24/jun</td></tr>
+      <tr><td>Maio 2026</td><td class="right">21-31 (11 dias)</td><td class="right">R$ 1.886,55</td><td class="right">R$ 260,91</td><td class="right">R$ 2.147,46</td></tr>
+      <tr><td>Junho 2026</td><td class="right">01-30 (30 dias)</td><td class="right">R$ 5.543,82</td><td class="right">R$ 766,71</td><td class="right">R$ 6.310,53</td></tr>
+      <tr class="total-row"><td><strong>Total</strong></td><td class="right"><strong>40 dias</strong></td><td class="right"><strong>R$ 7.430,37</strong></td><td class="right"><strong>R$ 1.027,62</strong></td><td class="right"><strong>R$ 8.457,99</strong></td></tr>
     </tbody>
   </table>
 
   <div class="note">
-    <strong>Potencial se 50% dos PIX pendentes converterem</strong>
-    +7 vendas ≈ +R$ 494,30 → receita iria pra ~R$ 1.882 → ROAS subiria pra 1,38× → lucro de ~R$ 518. Implementar recuperação PIX (WhatsApp 30min/2h/24h) continua sendo a alavanca mais barata.
+    <strong>Ritmo de investimento estável</strong>
+    Média diária: R$ 185,76 (Maio) → R$ 184,79 (Junho). O total é parecido, mas a distribuição mudou: em maio, quase todo o gasto foi na [04] COSTCAP com CPA alto. Em junho, o gasto distribuiu melhor entre [06] e [07] com CPA muito mais eficiente.
   </div>
 
-  <!-- FUNIL VISUAL -->
-  <h2>Funil Completo de Vendas</h2>
-  <p style="text-align:center; font-size:13px; color:var(--text-muted); margin-top:-8px;">Cada etapa mostra <strong style="color:var(--purple-bright)">Volume</strong>, <strong style="color:var(--purple-bright)">Custo</strong> e <strong style="color:var(--purple-bright)">Taxa</strong></p>
-
-  <div class="funnel-container">
-
-    <div class="funnel-stage s1">
-      <div class="stage-title">Impressões</div>
-      <div class="stage-metrics">
-        <div class="stage-metric big">
-          <div class="metric-value">33.538</div>
-          <div class="metric-label">Volume</div>
-        </div>
-        <div class="stage-metric">
-          <div class="metric-value">R$ 35,73</div>
-          <div class="metric-label">CPM</div>
-        </div>
-        <div class="stage-metric">
-          <div class="metric-value">1,07</div>
-          <div class="metric-label">Frequência</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="funnel-arrow"></div>
-
-    <div class="funnel-stage s2">
-      <div class="stage-title">Cliques no Link</div>
-      <div class="stage-metrics">
-        <div class="stage-metric big">
-          <div class="metric-value">533</div>
-          <div class="metric-label">Volume</div>
-        </div>
-        <div class="stage-metric">
-          <div class="metric-value">R$ 2,25</div>
-          <div class="metric-label">CPC link</div>
-        </div>
-        <div class="stage-metric">
-          <div class="metric-value">1,59%</div>
-          <div class="metric-label">CTR</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="funnel-arrow"></div>
-
-    <div class="funnel-stage s3">
-      <div class="stage-title">Visualizações da Página</div>
-      <div class="stage-metrics four">
-        <div class="stage-metric big">
-          <div class="metric-value">392</div>
-          <div class="metric-label">Volume</div>
-        </div>
-        <div class="stage-metric">
-          <div class="metric-value">R$ 3,06</div>
-          <div class="metric-label">Custo/LP view</div>
-        </div>
-        <div class="stage-metric">
-          <div class="metric-value">73,5%</div>
-          <div class="metric-label">Click → LP</div>
-        </div>
-        <div class="stage-metric win">
-          <div class="metric-value">5,10%</div>
-          <div class="metric-label">LP → Venda</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="funnel-arrow"></div>
-
-    <div class="funnel-stage s4">
-      <div class="stage-title">Chegou no Checkout</div>
-      <div class="stage-metrics">
-        <div class="stage-metric big">
-          <div class="metric-value">110</div>
-          <div class="metric-label">Volume</div>
-        </div>
-        <div class="stage-metric">
-          <div class="metric-value">R$ 10,89</div>
-          <div class="metric-label">Custo/IC</div>
-        </div>
-        <div class="stage-metric">
-          <div class="metric-value">28,1%</div>
-          <div class="metric-label">LP → Checkout</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="funnel-arrow"></div>
-
-    <div class="funnel-stage s5">
-      <div class="stage-title">Vendas Pagas</div>
-      <div class="stage-metrics">
-        <div class="stage-metric big">
-          <div class="metric-value">20</div>
-          <div class="metric-label">Volume</div>
-        </div>
-        <div class="stage-metric">
-          <div class="metric-value">R$ 59,91</div>
-          <div class="metric-label">CPA</div>
-        </div>
-        <div class="stage-metric">
-          <div class="metric-value">18,2%</div>
-          <div class="metric-label">Checkout → Venda</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- COMPARATIVO POR PÁGINA -->
-  <h2>Performance por Página (V1 vs V2)</h2>
-  <p>Comparação direta das duas páginas. A <strong>V2 continua à frente</strong>, mas a V1 melhorou bastante (subiu de 3,21% pra 4,21% de conversão).</p>
-
-  <div class="pages-grid">
-
-    <div class="page-card loser">
-      <div class="page-label">Página V1</div>
-      <div class="page-name">LP Antiga</div>
-      <a class="page-url" href="https://realplancredito.com/rating-bancario-v1/" target="_blank" rel="noopener">🔗 realplancredito.com/rating-bancario-v1/</a>
-      <div class="page-stats">
-        <div class="page-stat">
-          <div class="ps-label">Visualizações</div>
-          <div class="ps-value">214</div>
-        </div>
-        <div class="page-stat">
-          <div class="ps-label">Vendas pagas</div>
-          <div class="ps-value">9</div>
-        </div>
-        <div class="page-stat">
-          <div class="ps-label">Conv. LP→Venda</div>
-          <div class="ps-value">4,21%</div>
-        </div>
-        <div class="page-stat">
-          <div class="ps-label">CPA Meta</div>
-          <div class="ps-value">R$ 65,27</div>
-        </div>
-        <div class="page-stat">
-          <div class="ps-label">Investido</div>
-          <div class="ps-value">R$ 587,46</div>
-        </div>
-        <div class="page-stat">
-          <div class="ps-label">ROAS</div>
-          <div class="ps-value">0,99×</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="page-card winner">
-      <div class="page-label">Página V2 · Vencedora</div>
-      <div class="page-name">LP Direta</div>
-      <a class="page-url" href="https://realplancredito.com/rating-bancario-v2/" target="_blank" rel="noopener">🔗 realplancredito.com/rating-bancario-v2/</a>
-      <div class="page-stats">
-        <div class="page-stat">
-          <div class="ps-label">Visualizações</div>
-          <div class="ps-value">178</div>
-        </div>
-        <div class="page-stat highlight">
-          <div class="ps-label">Vendas pagas</div>
-          <div class="ps-value">11</div>
-        </div>
-        <div class="page-stat highlight">
-          <div class="ps-label">Conv. LP→Venda</div>
-          <div class="ps-value">6,18%</div>
-        </div>
-        <div class="page-stat highlight">
-          <div class="ps-label">CPA Meta</div>
-          <div class="ps-value">R$ 55,26</div>
-        </div>
-        <div class="page-stat">
-          <div class="ps-label">Investido</div>
-          <div class="ps-value">R$ 607,90</div>
-        </div>
-        <div class="page-stat highlight">
-          <div class="ps-label">ROAS</div>
-          <div class="ps-value">1,33×</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="note win">
-    <strong>A V2 continua na frente, mas a V1 deu um salto</strong>
-    V2 = 6,18% conv (estável) · V1 saltou de 3,21% pra 4,21% (+31%). Hipótese: o tráfego está aprendendo melhor com a CAPI rodando há mais tempo. A V2 ainda gera 47% mais conversão que a V1 — recomendação de migrar verba pra V2 continua válida.
-  </div>
-
-  <!-- POR CRIATIVO -->
-  <h2>Vendas por Criativo</h2>
+  <h2>Investimento por Campanha (Todas as RTKB)</h2>
   <table>
-    <thead><tr><th>Criativo</th><th>Camp.</th><th class="right">Gasto</th><th class="right">Vendas</th><th class="right">CPA</th><th class="right">ROAS</th></tr></thead>
+    <thead><tr><th>Campanha</th><th class="right">Investido</th><th class="right">Vendas</th><th class="right">CPA</th><th class="right">ROAS</th><th>Status</th></tr></thead>
     <tbody>
-      <tr>
-        <td class="strong">⭐ ADV06 — Por que Reprovado</td>
-        <td>[07] V2</td>
-        <td class="right">R$ 62,46</td>
-        <td class="right strong">3</td>
-        <td class="right win">R$ 20,82</td>
-        <td class="right win"><strong>2,72×</strong></td>
-      </tr>
-      <tr>
-        <td>ADV07 — Como Saber Rating</td>
-        <td>[06] V1</td>
-        <td class="right">R$ 539,38</td>
-        <td class="right">9</td>
-        <td class="right">R$ 59,93</td>
-        <td class="right ok">1,07×</td>
-      </tr>
-      <tr>
-        <td>ADV07 — Como Saber Rating</td>
-        <td>[07] V2</td>
-        <td class="right">R$ 545,54</td>
-        <td class="right">8</td>
-        <td class="right">R$ 68,19</td>
-        <td class="right ok">1,17×</td>
-      </tr>
-      <tr>
-        <td>ADV06 — Por que Reprovado</td>
-        <td>[06] V1</td>
-        <td class="right">R$ 48,59</td>
-        <td class="right bad">0</td>
-        <td class="right">—</td>
-        <td class="right bad">0,00×</td>
-      </tr>
+      <tr><td>[00] RTKB Perpétuo (teste inicial)</td><td class="right">R$ 0,00</td><td class="right">0</td><td class="right">—</td><td class="right">—</td><td><span class="badge paused">Sem entrega</span></td></tr>
+      <tr><td>[01] RTKB Perpétuo</td><td class="right">R$ 610,60</td><td class="right bad">0</td><td class="right">∞</td><td class="right bad">0×</td><td><span class="badge paused">Pausada</span></td></tr>
+      <tr><td>[02] RTKB Perpétuo (18-65 anos)</td><td class="right">R$ 168,90</td><td class="right bad">0</td><td class="right">∞</td><td class="right bad">0×</td><td><span class="badge paused">Pausada</span></td></tr>
+      <tr><td>[03] RTKB Perpétuo (teste)</td><td class="right">R$ 128,73</td><td class="right bad">0</td><td class="right">∞</td><td class="right bad">0×</td><td><span class="badge paused">Pausada</span></td></tr>
+      <tr><td class="strong">[04] RTKB Perpétuo COSTCAP</td><td class="right">R$ 3.144,59</td><td class="right">18 + 1 upsell</td><td class="right">R$ 165,50</td><td class="right">0,47×</td><td><span class="badge paused">Pausada</span></td></tr>
+      <tr><td>[05] RTKB Perpétuo</td><td class="right">R$ 672,59</td><td class="right">5</td><td class="right">R$ 134,52</td><td class="right">0,59×</td><td><span class="badge paused">Pausada</span></td></tr>
+      <tr><td class="strong">[06] RTKB PADRÃO V1 (LP antiga)</td><td class="right">R$ 693,75</td><td class="right">10</td><td class="right ok">R$ 69,38</td><td class="right ok">0,95×</td><td><span class="badge paused">Pausada</span></td></tr>
+      <tr><td class="strong">[07] RTKB PADRÃO V2 (LP nova)</td><td class="right">R$ 734,30</td><td class="right win">11</td><td class="right win">R$ 66,75</td><td class="right win">1,10×</td><td><span class="badge winner">Ativa</span></td></tr>
+      <tr class="total-row"><td><strong>Total até 24/jun</strong></td><td class="right"><strong>R$ 6.153,46</strong></td><td class="right"><strong>44 + 1 upsell</strong></td><td class="right"><strong>R$ 139,85</strong></td><td class="right"><strong>0,66×</strong></td><td>—</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px; color:var(--text-muted); margin-top:-6px;"><em>* Total campanhas até 24/jun. Adicional 25-30/jun de R$ 1.276,91 majoritariamente na [07] (com sincronização de atribuição em curso na UTMify).</em></p>
+
+  <h2>Vendas por Plataforma</h2>
+  <p>A operação passou por duas plataformas de checkout — Zouti no início (descontinuada por problemas técnicos isolados nessa conta) e Kiwify (atual).</p>
+
+  <div class="platform-grid">
+    <div class="platform-card zouti">
+      <div class="platform-name">Zouti</div>
+      <div class="platform-status">🔴 Descontinuada · Período ~29/mai–01/jun</div>
+      <div class="platform-stats">
+        <div class="platform-stat"><div class="ps-label">Vendas pagas</div><div class="ps-value">23</div></div>
+        <div class="platform-stat"><div class="ps-label">Receita bruta</div><div class="ps-value">R$ 1.897,50</div></div>
+        <div class="platform-stat"><div class="ps-label">Não pagas</div><div class="ps-value">11</div></div>
+        <div class="platform-stat"><div class="ps-label">Reembolsos</div><div class="ps-value">2</div></div>
+      </div>
+    </div>
+    <div class="platform-card kiwify">
+      <div class="platform-name">Kiwify</div>
+      <div class="platform-status">🟢 Ativa · Período 17/jun–30/jun</div>
+      <div class="platform-stats">
+        <div class="platform-stat"><div class="ps-label">Vendas pagas</div><div class="ps-value">30</div></div>
+        <div class="platform-stat"><div class="ps-label">Receita bruta</div><div class="ps-value">R$ 2.187,00</div></div>
+        <div class="platform-stat"><div class="ps-label">PIX pendentes</div><div class="ps-value">24</div></div>
+        <div class="platform-stat"><div class="ps-label">Reembolsos</div><div class="ps-value">4</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Kiwify vem crescendo consistentemente</strong>
+    Em ~2 semanas, Kiwify já superou o volume total da Zouti (30 vs 23 vendas). E ainda tem <strong>24 PIX pendentes</strong> = potencial de <strong>+R$ 1.727,60</strong> em receita — se recuperar 50% (padrão de mercado), isso adiciona R$ 863,80 no acumulado.
+  </div>
+
+  <h2>Produtos Vendidos (Total Lifetime)</h2>
+  <table>
+    <thead><tr><th>Produto</th><th class="right">Preço unit.</th><th>Plataforma(s)</th><th class="right">Vendas</th><th class="right">Receita bruta</th></tr></thead>
+    <tbody>
+      <tr><td class="strong">Consulta Rating Bancário</td><td class="right">R$ 79,90</td><td>Zouti + Kiwify</td><td class="right strong">50</td><td class="right">R$ 3.995,00</td></tr>
+      <tr><td>Boas Práticas p/ Manter Rating Alto (OB)</td><td class="right">R$ 29,90 / R$ 9,90</td><td>Zouti + Kiwify</td><td class="right">4</td><td class="right">R$ 59,60</td></tr>
+      <tr><td>Como Conquistar o Cartão Black (OB)</td><td class="right">R$ 29,90</td><td>Zouti</td><td class="right">1</td><td class="right">R$ 29,90</td></tr>
+      <tr class="total-row"><td><strong>Total</strong></td><td class="right">—</td><td>—</td><td class="right"><strong>55 itens em 53 pedidos</strong></td><td class="right"><strong>R$ 4.084,50</strong></td></tr>
     </tbody>
   </table>
 
   <div class="note">
-    <strong>ADV06 + LP V2 segue como o combo mais rentável</strong>
-    Mesmo após mais 2 dias de dados, o ADV06 na LP V2 segue com o melhor CPA (R$ 20,82) e ROAS (2,72×). O ROAS desceu de 4,10× pra 2,72× (esperado — regressão natural com mais volume), mas continua o melhor dos 4 combos. ADV07 está estável e bem nas duas LPs.
+    <strong>Order bumps subaproveitados</strong>
+    Take rate de order bumps: 5 em 53 pedidos = <strong>9,4%</strong> (o ideal seria 20-30%). O OB "Boas Práticas" mudou de R$ 29,90 (Zouti) para R$ 9,90 (Kiwify) — preço mais baixo pode explicar em parte, mas a taxa ainda tem espaço. Vale testar posicionamento e copy do OB no checkout.
   </div>
 
-  <!-- MELHORES CRIATIVOS -->
-  <h2>Melhores Criativos (Drive)</h2>
+  <h2>Resultado Consolidado</h2>
+  <table>
+    <tbody>
+      <tr><td>Receita bruta (Zouti + Kiwify)</td><td class="right">R$ 4.084,50</td></tr>
+      <tr><td>Investimento Meta</td><td class="right">−R$ 7.430,37</td></tr>
+      <tr><td>Imposto Meta (13,83%)</td><td class="right">−R$ 1.027,62</td></tr>
+      <tr class="total-row"><td><strong>RESULTADO ACUMULADO</strong></td><td class="right strong bad">−R$ 4.373,49</td></tr>
+      <tr><td>ROAS lifetime</td><td class="right">0,48×</td></tr>
+      <tr><td>ROAS últimos 7 dias (18-24/jun)</td><td class="right ok">1,02×</td></tr>
+      <tr><td>CPA médio lifetime</td><td class="right">R$ 159,58</td></tr>
+      <tr><td>CPA médio últimos 7 dias</td><td class="right ok">R$ 68,20</td></tr>
+      <tr><td>Ticket médio (receita/venda)</td><td class="right">R$ 77,07</td></tr>
+    </tbody>
+  </table>
 
-  <div class="creative-card winner">
-    <div class="creative-info">
-      <div class="name">⭐ ADV06 — Por que Financiamento Reprovado</div>
-      <div class="meta">Duração: 0:40 · Combo vencedor com LP V2</div>
-      <div class="stats">ROAS 2,72× · CPA R$ 20,82 · 3 vendas com R$ 62 investidos</div>
-    </div>
-    <div class="creative-actions">
-      <a class="btn" href="https://drive.google.com/file/d/11rQ9H9Dobq0sS68JRREt9DiEiNwi27DT/view?usp=drivesdk" target="_blank" rel="noopener">Ver no Drive</a>
-    </div>
+  <div class="note win">
+    <strong>Tendência de melhora clara</strong>
+    ROAS lifetime está em 0,48×, mas dos últimos 7 dias já é 1,02× (operação positiva). CPA caiu de R$ 159 (média) pra R$ 68 (recente). A parte deficitária vem principalmente do "período de aprendizado" das campanhas [01]-[05] — que hoje já não estão rodando. A operação atual é sustentável.
   </div>
 
-  <div class="creative-card winner">
-    <div class="creative-info">
-      <div class="name">⭐ ADV07 — Como Saber Rating Bancário</div>
-      <div class="meta">Duração: 0:29 · Funciona bem nas duas LPs</div>
-      <div class="stats">17 vendas · ROAS 1,17× (V2) e 1,07× (V1) · Sustenta o volume</div>
-    </div>
-    <div class="creative-actions">
-      <a class="btn" href="https://drive.google.com/file/d/10bQNUfmtQ8XYngRhrdt9WBF5iHc53eqN/view?usp=drivesdk" target="_blank" rel="noopener">Ver no Drive</a>
-    </div>
-  </div>
+  <h2>Status Atual da Operação</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Situação</th></tr></thead>
+    <tbody>
+      <tr><td>Campanhas rodando</td><td>Apenas <span class="badge winner">[07] RTKB PADRÃO V2</span> · CPA R$ 66,75 · ROAS 1,10×</td></tr>
+      <tr><td>Plataforma de checkout</td><td>Kiwify (Zouti descontinuada)</td></tr>
+      <tr><td>Página de vendas ativa</td><td><a href="https://realplancredito.com/rating-bancario-v2/" target="_blank" rel="noopener">LP V2 (versão direta)</a> · Conv. LP→Venda 6,18%</td></tr>
+      <tr><td>Criativo top (eficiência)</td><td><strong>ADV06 + LP V2</strong> · CPA R$ 20,82 · ROAS 2,72×</td></tr>
+      <tr><td>Criativo de volume</td><td>ADV07 · ~90% das vendas · CPA ~R$ 65-70</td></tr>
+      <tr><td>Conta Meta</td><td><span class="badge winner">Ativa</span> · Sem pendências de pagamento</td></tr>
+    </tbody>
+  </table>
 
-  <!-- ANÁLISE ESTRATÉGICA -->
   <h2>Análise Estratégica</h2>
   <div class="message">
-    <p><strong>1. A operação virou positiva.</strong> Pela primeira vez o ROAS passou de 1× (1,02×). Ainda apertado, mas a tendência é clara: cada novo dia melhorou em relação ao anterior.</p>
-    <p><strong>2. ADV06 + LP V2 segue como combo de elite.</strong> Mantém o melhor CPA (R$ 20,82) mesmo com mais volume. Vale escalar com cuidado — todo aumento aqui multiplica o lucro.</p>
-    <p><strong>3. ADV07 estabilizou em ~R$ 60-68 de CPA</strong> nas duas LPs. É o criativo de volume, ADV06 é o de eficiência. Boa combinação.</p>
-    <p><strong>4. LP V1 está melhorando.</strong> Subiu de 3,21% pra 4,21% de conversão — sinal de que o algoritmo do Meta tá entregando melhor. Mas V2 ainda é 47% mais eficiente.</p>
-    <p><strong>5. 14 PIX pendentes (R$ 988,60) seguem como a maior alavanca.</strong> Se converter metade, o lucro mensal pula de ~R$ 100 pra ~R$ 1.000+.</p>
+    <p><strong>1. Fase inicial (21/mai a 16/jun) foi cara.</strong> Campanhas [01]-[05] gastaram R$ 4.725,41 para 24 vendas + 1 upsell. Boa parte foi custo de aprendizagem — problemas de tracking Zouti, testes de público, iterações de LP.</p>
+    <p><strong>2. Reset em 17/jun deu certo.</strong> Ao criar [06] e [07] com nova estrutura + Kiwify + LP V2, o CPA caiu de R$ 165 pra R$ 68 (60% menor). ROAS mais que dobrou.</p>
+    <p><strong>3. LP V2 é o divisor de águas.</strong> Conversão LP→Venda de 6,18% (vs 3,21% da V1). Manter só a V2.</p>
+    <p><strong>4. Order bumps ainda subaproveitados.</strong> 9,4% de take rate está muito abaixo do potencial (20-30% ideal). Dinheiro em cima da mesa.</p>
+    <p><strong>5. 24 PIX pendentes (R$ 1.727,60) é a alavanca de curto prazo.</strong> Recuperação automática via WhatsApp (30min/2h/24h) pode capturar de 40-60% desse valor sem gastar mais em tráfego.</p>
   </div>
 
-  <!-- PRÓXIMOS PASSOS -->
   <h2>Próximos Passos</h2>
   <table>
-    <thead><tr><th>#</th><th>Ação</th><th>Prioridade</th></tr></thead>
+    <thead><tr><th>#</th><th>Ação</th><th>Impacto esperado</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td class="strong">Migrar 70-100% do budget pra camp [07] (LP V2)</td><td><span class="badge alert">Alta</span></td></tr>
-      <tr><td>2</td><td class="strong">Subir budget do ADV06 dentro da camp [07] gradualmente</td><td><span class="badge alert">Alta</span></td></tr>
-      <tr><td>3</td><td class="strong">Implementar recuperação PIX automática (30min/2h/24h)</td><td><span class="badge alert">Alta</span></td></tr>
-      <tr><td>4</td><td>Produzir 3-5 variações do ADV06 e ADV07 (nova leva)</td><td><span class="badge">Média</span></td></tr>
-      <tr><td>5</td><td>Avaliar Avatar IA (HeyGen, R$ 30-40/vídeo) pra acelerar produção</td><td><span class="badge">Média</span></td></tr>
-      <tr><td>6</td><td>Continuar monitorando ROAS — alvo: 1,30× nas próximas 2 semanas</td><td><span class="badge">Contínua</span></td></tr>
+      <tr><td>1</td><td class="strong">Recuperação PIX automática (WhatsApp 30min/2h/24h)</td><td>+R$ 863 no próximo ciclo</td></tr>
+      <tr><td>2</td><td class="strong">Escalar budget da [07] LP V2 gradualmente (+20%/semana)</td><td>Mais vendas mantendo CPA</td></tr>
+      <tr><td>3</td><td class="strong">Testar order bumps novos / reajustar preço</td><td>Subir take rate de 9% pra 20%+</td></tr>
+      <tr><td>4</td><td>Produzir nova leva de criativos (ADV06 + ADV07 variações)</td><td>Refresh de audiência, resistir fatigue</td></tr>
+      <tr><td>5</td><td>Continuar monitorando conversão LP V2 (alvo: manter ≥ 6%)</td><td>Estabilidade do funil</td></tr>
+      <tr><td>6</td><td>Avaliar Avatar IA (HeyGen R$ 30-40/vídeo)</td><td>Acelerar produção sem gravar</td></tr>
     </tbody>
   </table>
 
   <footer>
-    Relatório gerado em <strong>24 de junho de 2026 às 17:52</strong> · Brito Mídias<br>
+    Relatório geral consolidado gerado em <strong>30 de junho de 2026</strong> · Brito Mídias<br>
     Gestão de Tráfego Pago · Conta Meta: 944689576621206<br>
-    Período: 18 a 24/jun/2026 · Plataforma de vendas: Kiwify
+    Período: 21 de maio a 30 de junho de 2026 (lifetime) · Plataformas: Zouti (desc.) + Kiwify (ativa)
   </footer>
 
 </div>
