@@ -44,7 +44,7 @@ a{color:var(--roxo-dark);text-decoration:none}
 .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
 .pill{border:1px solid var(--roxo-light);color:#EDE9FE;border-radius:100px;padding:7px 15px;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
 .pill.solid{background:linear-gradient(90deg,#7C3AED,#5B21B6);border-color:transparent;color:#fff}
-.pill.warn{border-color:#F4A38A;color:#FFD9CC}
+.pill.ok{border-color:#6FCF97;color:#CFF5DF}
 
 section{padding:56px 0;border-bottom:1px solid var(--linha)}
 section.soft{background:var(--bg-soft)}
@@ -53,11 +53,11 @@ section.soft{background:var(--bg-soft)}
 h2{font-size:clamp(24px,3.4vw,32px);font-weight:700;margin-top:14px;letter-spacing:-.01em}
 .intro{color:var(--cinza);margin-top:12px;max-width:720px;font-size:16px}
 
-.alert{display:flex;gap:16px;margin-top:26px;padding:22px 24px;border-radius:16px;border:1px solid #F4C7C7;background:linear-gradient(180deg,#FEF4F4,#fff)}
-.alert .ic{flex:0 0 auto;width:40px;height:40px;border-radius:11px;background:var(--vermelho-bg);color:var(--vermelho);display:grid;place-items:center;font-size:22px}
-.alert h3{font-size:18px;font-weight:700;color:#B42318}
-.alert p{font-size:14.5px;color:#7A2E2E;margin-top:5px}
-.alert p b{color:#B42318}
+.alert{display:flex;gap:16px;margin-top:26px;padding:22px 24px;border-radius:16px;border:1px solid #F3D9A6;background:linear-gradient(180deg,#FEF9EF,#fff)}
+.alert .ic{flex:0 0 auto;width:40px;height:40px;border-radius:11px;background:var(--amber-bg);color:var(--amber);display:grid;place-items:center;font-size:22px}
+.alert h3{font-size:18px;font-weight:700;color:#92580A}
+.alert p{font-size:14.5px;color:#6B5326;margin-top:5px}
+.alert p b{color:#92580A}
 
 .grid{display:grid;gap:16px;margin-top:30px}
 .g4{grid-template-columns:repeat(4,1fr)}
@@ -95,7 +95,6 @@ h2{font-size:clamp(24px,3.4vw,32px);font-weight:700;margin-top:14px;letter-spaci
 .read.up .ic{background:var(--verde-bg);color:var(--verde)}
 .read.warn .ic{background:var(--amber-bg);color:var(--amber)}
 .read.act .ic{background:var(--roxo-xlight);color:var(--roxo-dark)}
-.read.stop .ic{background:var(--vermelho-bg);color:var(--vermelho)}
 .read h4{font-size:15.5px;font-weight:600}
 .read p{font-size:14px;color:var(--cinza);margin-top:3px}
 
@@ -141,8 +140,9 @@ footer .disc{margin-top:14px;font-size:12px;color:#6f6880;max-width:760px;line-h
     <p class="sub">Venda direta perpétua — Consulta Rating Bancário (RTKB). Desempenho de tráfego pago e vendas no período de <b style="color:#fff">01 a 31 de julho de 2026</b>.</p>
     <div class="pills">
       <span class="pill solid">01–31 JUL 2026</span>
+      <span class="pill">Meta Ads</span>
       <span class="pill">Vendas: Kiwify</span>
-      <span class="pill warn">⚠ Conta UNSETTLED</span>
+      <span class="pill ok">Conta regularizada ✓</span>
     </div>
   </div>
 </header>
@@ -151,13 +151,13 @@ footer .disc{margin-top:14px;font-size:12px;color:#6f6880;max-width:760px;line-h
   <div class="wrap">
     <div class="section-label">Mensagem do gestor</div>
     <h2>Leitura rápida do período</h2>
-    <p class="intro">No mês, a campanha gerou <b>56 vendas aprovadas</b> do produto principal (Consulta Rating Bancário), <b>R$ 4.652,32</b> de retorno bruto, sobre um investimento de <b>~R$ 5.815</b> (última leitura Meta em 28/07) — ROAS ~<b>0,80</b>. Dois criativos (<a class="cr" href="https://drive.google.com/file/d/10bQNUfmtQ8XYngRhrdt9WBF5iHc53eqN/view" target="_blank" rel="noopener">ADV07</a> e <a class="cr" href="https://drive.google.com/file/d/11rQ9H9Dobq0sS68JRREt9DiEiNwi27DT/view" target="_blank" rel="noopener">ADV06</a>) seguem carregando 89% das vendas. <b>Mas o mês fecha com um problema grave e urgente:</b> a conta de anúncios está com pendência de pagamento.</p>
+    <p class="intro">No mês, a campanha investiu <b>R$ 6.110,01</b> e gerou <b>56 vendas aprovadas</b> do produto principal (Consulta Rating Bancário), com <b>R$ 4.652,12</b> de retorno bruto — ROAS de <b>0,76</b>. Dois criativos (<a class="cr" href="https://drive.google.com/file/d/10bQNUfmtQ8XYngRhrdt9WBF5iHc53eqN/view" target="_blank" rel="noopener">ADV07</a> e <a class="cr" href="https://drive.google.com/file/d/11rQ9H9Dobq0sS68JRREt9DiEiNwi27DT/view" target="_blank" rel="noopener">ADV06</a>) seguem carregando 89% das vendas. <b>Ponto de atenção do mês:</b> a conta de anúncios ficou com pendência de pagamento no fim de julho — <b>já regularizada</b>.</p>
 
     <div class="alert">
-      <div class="ic">⛔</div>
+      <div class="ic">⚠</div>
       <div>
-        <h3>Conta de anúncios em UNSETTLED — entrega interrompida por pendência de pagamento</h3>
-        <p>A conta <b>"CA - Anunciante - Iarla Pugliesi"</b> está com status <b>UNSETTLED</b> no Meta (fatura/pagamento pendente). É a causa direta das paradas de entrega: <b>26–27/07</b> zerados, recuperação fraca em 28–29 e <b>30–31/07 novamente zerados</b>. Enquanto a conta estiver UNSETTLED, o Meta não entrega anúncios nem libera os dados da conta. <b>Ação imediata:</b> regularizar o pagamento em <i>Gerenciador de Anúncios → Cobrança</i> (conferir cartão/limite e quitar o valor em aberto). Cada dia parado é venda perdida num funil que vinha acelerando.</p>
+        <h3>A conta ficou em UNSETTLED no fim de julho — já regularizada ✓</h3>
+        <p>A conta <b>"CA - Anunciante - Iarla Pugliesi"</b> entrou em status <b>UNSETTLED</b> (pendência de pagamento) no Meta no fim do mês, o que interrompeu a entrega e derrubou as vendas nos dias <b>26–27</b> e <b>30–31/07</b>. A conta <b>já voltou para ACTIVE</b> — a entrega pode ser retomada normalmente. Recomenda-se <b>monitorar a cobrança</b> (cartão/limite) pra não repetir. Obs.: a conta secundária <b>"CA - Real Plan"</b> ainda aparece UNSETTLED — vale conferir também.</p>
       </div>
     </div>
   </div>
@@ -167,21 +167,21 @@ footer .disc{margin-top:14px;font-size:12px;color:#6f6880;max-width:760px;line-h
   <div class="wrap">
     <div class="section-label">Visão consolidada</div>
     <h2>Números do período</h2>
-    <p class="intro">Vendas apuradas <b>direto da planilha Kiwify</b> (somente pedidos <b>aprovados</b>; retorno = valor bruto). Investimento apurado <b>direto do Meta Ads</b> — última leitura possível em <b>28/07</b> (a conta entrou em UNSETTLED e travou os dados; como a entrega ficou ~zerada depois, o valor aproxima bem o mês).</p>
+    <p class="intro">Vendas apuradas <b>direto da planilha Kiwify</b> (somente pedidos <b>aprovados</b>; retorno = valor bruto). Investimento apurado <b>direto do Meta Ads</b> (conta da Iarla, já regularizada).</p>
 
     <div class="grid g4">
-      <div class="card"><small>Investimento</small><div class="num">~R$ 5.815</div><div class="foot">Meta · leitura até 28/07 <span class="tag red">conta travada</span></div></div>
+      <div class="card"><small>Investimento</small><div class="num">R$ 6.110</div><div class="foot">Meta Ads · conta Iarla</div></div>
       <div class="card"><small>Vendas aprovadas</small><div class="num">56</div><div class="foot">Consulta Rating (produto principal)</div></div>
       <div class="card"><small>Retorno bruto</small><div class="num">R$ 4.652</div><div class="foot">+ 8 order bumps (R$ 139,20)</div></div>
-      <div class="card hi"><small>ROAS</small><div class="num">~0,80</div><div class="foot">retorno bruto ÷ investimento</div></div>
+      <div class="card hi"><small>ROAS</small><div class="num">0,76</div><div class="foot">retorno bruto ÷ investimento</div></div>
     </div>
     <div class="grid g4" style="margin-top:16px">
-      <div class="card"><small>CPA</small><div class="num">R$ 103,84</div><div class="foot">custo por venda aprovada</div></div>
+      <div class="card"><small>CPA</small><div class="num">R$ 109,11</div><div class="foot">custo por venda aprovada</div></div>
       <div class="card"><small>Ticket médio</small><div class="num">R$ 79,90</div><div class="foot">produto de entrada</div></div>
-      <div class="card"><small>Resultado no período</small><div class="num" style="color:var(--vermelho)">− R$ 1.163</div><div class="foot"><span class="tag red">Captação de topo</span></div></div>
+      <div class="card"><small>Resultado no período</small><div class="num" style="color:var(--vermelho)">− R$ 1.458</div><div class="foot"><span class="tag red">Captação de topo</span></div></div>
       <div class="card"><small>Meio de pagamento</small><div class="num">89% PIX</div><div class="foot">50 PIX · 6 cartão</div></div>
     </div>
-    <p class="note">Funil dos anúncios (Meta, até 28/07): <b>2.729 cliques</b> → <b>1.456 visitas à página</b> → <b>282 checkouts iniciados</b> → <b>56 vendas</b>.</p>
+    <p class="note">Funil dos anúncios no período: <b>2.870 cliques</b> → <b>1.528 visitas à página</b> → <b>295 checkouts iniciados</b> → <b>56 vendas</b>.</p>
   </div>
 </section>
 
@@ -236,7 +236,7 @@ footer .disc{margin-top:14px;font-size:12px;color:#6f6880;max-width:760px;line-h
       <div class="bar stop"><div class="b" style="height:100%"></div><div class="v">0</div><div class="d">30</div></div>
       <div class="bar stop"><div class="b" style="height:100%"></div><div class="v">0</div><div class="d">31</div></div>
     </div>
-    <p class="note">Rodou forte até <b>25/07</b>. As barras hachuradas em vermelho (<b>26, 27, 30 e 31</b>) marcam os dias sem entrega — coincidem com a conta em UNSETTLED. Dias 28–29 foram uma recuperação fraca antes de zerar de novo.</p>
+    <p class="note">Rodou forte até <b>25/07</b>. As barras hachuradas (<b>26, 27, 30 e 31</b>) são dias sem venda, coincidindo com a pendência de pagamento da conta no fim do mês (já regularizada). Dia 31 é parcial (relatório gerado às 08:27).</p>
 
     <h3 style="margin-top:40px;font-size:17px;font-weight:600">Outros status no período</h3>
     <div class="grid g3" style="margin-top:16px">
@@ -251,7 +251,7 @@ footer .disc{margin-top:14px;font-size:12px;color:#6f6880;max-width:760px;line-h
   <div class="wrap">
     <div class="section-label">Criativos</div>
     <h2>Quais anúncios geraram as vendas</h2>
-    <p class="intro">Cruzamento entre o <b>gasto por anúncio</b> (Meta Ads, até 28/07) e as <b>vendas atribuídas</b> (UTM na planilha Kiwify, até 31/07). Clique no nome do criativo para abrir o vídeo no Drive.</p>
+    <p class="intro">Cruzamento entre o <b>gasto por anúncio</b> (Meta Ads) e as <b>vendas atribuídas</b> (UTM na planilha Kiwify). Clique no nome do criativo para abrir o vídeo no Drive.</p>
 
     <div class="crea">
       <div class="box top">
@@ -260,9 +260,9 @@ footer .disc{margin-top:14px;font-size:12px;color:#6f6880;max-width:760px;line-h
         <div class="ang">Vídeo UGC · sticker de caixinha de pergunta · Reels/Stories</div>
         <div class="mrow">
           <div><small>Vendas</small><b>34</b></div>
-          <div><small>Investido</small><b>R$ 3.576</b></div>
+          <div><small>Investido</small><b>R$ 3.850</b></div>
           <div><small>Retorno</small><b>R$ 2.717</b></div>
-          <div><small>ROAS</small><b>0,76</b></div>
+          <div><small>ROAS</small><b>0,71</b></div>
         </div>
       </div>
       <div class="box">
@@ -271,9 +271,9 @@ footer .disc{margin-top:14px;font-size:12px;color:#6f6880;max-width:760px;line-h
         <div class="ang">Vídeo · ângulo de dor (crédito negado)</div>
         <div class="mrow">
           <div><small>Vendas</small><b>16</b></div>
-          <div><small>Investido</small><b>R$ 1.799</b></div>
+          <div><small>Investido</small><b>R$ 1.820</b></div>
           <div><small>Retorno</small><b>R$ 1.278</b></div>
-          <div><small>ROAS</small><b>0,71</b></div>
+          <div><small>ROAS</small><b>0,70</b></div>
         </div>
       </div>
     </div>
@@ -282,9 +282,9 @@ footer .disc{margin-top:14px;font-size:12px;color:#6f6880;max-width:760px;line-h
     <table class="tbl">
       <thead><tr><th>Criativo</th><th>Ângulo</th><th class="r">Invest.</th><th class="r">Vendas</th><th class="r">Retorno</th><th class="r">ROAS</th></tr></thead>
       <tbody>
-        <tr class="win"><td><a class="cr" href="https://drive.google.com/file/d/10bQNUfmtQ8XYngRhrdt9WBF5iHc53eqN/view" target="_blank" rel="noopener">ADV07</a></td><td>Como saber seu rating</td><td class="r">R$ 3.575,84</td><td class="r"><b>34</b></td><td class="r">R$ 2.716,60</td><td class="r"><b>0,76</b></td></tr>
-        <tr class="win"><td><a class="cr" href="https://drive.google.com/file/d/11rQ9H9Dobq0sS68JRREt9DiEiNwi27DT/view" target="_blank" rel="noopener">ADV06</a></td><td>Financiamento reprovado</td><td class="r">R$ 1.799,33</td><td class="r"><b>16</b></td><td class="r">R$ 1.278,40</td><td class="r"><b>0,71</b></td></tr>
-        <tr><td><a class="cr" href="https://drive.google.com/file/d/1sasYEoHpumj-4J0453LHrMli2evYxLxL/view" target="_blank" rel="noopener">ADV09</a></td><td>Cansado de pedir crédito</td><td class="r">R$ 190,81</td><td class="r">0</td><td class="r">—</td><td class="r">0,00</td></tr>
+        <tr class="win"><td><a class="cr" href="https://drive.google.com/file/d/10bQNUfmtQ8XYngRhrdt9WBF5iHc53eqN/view" target="_blank" rel="noopener">ADV07</a></td><td>Como saber seu rating</td><td class="r">R$ 3.850,02</td><td class="r"><b>34</b></td><td class="r">R$ 2.716,60</td><td class="r"><b>0,71</b></td></tr>
+        <tr class="win"><td><a class="cr" href="https://drive.google.com/file/d/11rQ9H9Dobq0sS68JRREt9DiEiNwi27DT/view" target="_blank" rel="noopener">ADV06</a></td><td>Financiamento reprovado</td><td class="r">R$ 1.820,10</td><td class="r"><b>16</b></td><td class="r">R$ 1.278,40</td><td class="r"><b>0,70</b></td></tr>
+        <tr><td><a class="cr" href="https://drive.google.com/file/d/1sasYEoHpumj-4J0453LHrMli2evYxLxL/view" target="_blank" rel="noopener">ADV09</a></td><td>Cansado de pedir crédito</td><td class="r">R$ 190,84</td><td class="r">0</td><td class="r">—</td><td class="r">0,00</td></tr>
         <tr><td><a class="cr" href="https://drive.google.com/file/d/1IHq5Kp2aM9tG0dLbOvBCwGsNONbqNZR6/view" target="_blank" rel="noopener">ADV08</a></td><td>Antes de pedir linha de crédito</td><td class="r">R$ 147,04</td><td class="r">0</td><td class="r">—</td><td class="r">0,00</td></tr>
         <tr><td><a class="cr" href="https://drive.google.com/file/d/11aPLXkaEdtYKwLjIDoeo8EXx1iwUQcIH/view" target="_blank" rel="noopener">ADV12</a></td><td>Não preciso de crédito agora</td><td class="r">R$ 55,20</td><td class="r">0</td><td class="r">—</td><td class="r">0,00</td></tr>
         <tr><td><a class="cr" href="https://drive.google.com/file/d/14zCAG6sbx0CCFzOIrmeBE9Rxyz6VBukP/view" target="_blank" rel="noopener">ADV10</a></td><td>Case WhatsApp</td><td class="r">R$ 39,19</td><td class="r">0</td><td class="r">—</td><td class="r">0,00</td></tr>
@@ -302,8 +302,8 @@ footer .disc{margin-top:14px;font-size:12px;color:#6f6880;max-width:760px;line-h
     <div class="section-label">Leitura &amp; próximos passos</div>
     <h2>O que fazer com esses dados</h2>
     <div class="reads">
-      <div class="read stop"><div class="ic">⛔</div><div><h4>Prioridade #1 — URGENTE: regularizar a conta (UNSETTLED)</h4><p>A conta está travada por pendência de pagamento no Meta. Nada mais importa enquanto isso não for resolvido: sem quitar a fatura, a campanha não volta a entregar. Conferir cartão/limite e pagar o valor em aberto no Gerenciador → Cobrança.</p></div></div>
-      <div class="read up"><div class="ic">↑</div><div><h4>Ao reativar, escalar <a class="cr" href="https://drive.google.com/file/d/10bQNUfmtQ8XYngRhrdt9WBF5iHc53eqN/view" target="_blank" rel="noopener">ADV07</a> e <a class="cr" href="https://drive.google.com/file/d/11rQ9H9Dobq0sS68JRREt9DiEiNwi27DT/view" target="_blank" rel="noopener">ADV06</a></h4><p>Somam 50 das 56 vendas (89%). São os cavalos de tração — retomar com mais verba neles e novas variações do mesmo ângulo.</p></div></div>
+      <div class="read up"><div class="ic">✓</div><div><h4>Conta regularizada — retomar e monitorar a cobrança</h4><p>A pendência de pagamento (UNSETTLED) que travou a entrega no fim de julho já foi resolvida — a conta voltou para ACTIVE. Retomar a campanha e acompanhar a cobrança de perto pra não repetir (a conta secundária "CA - Real Plan" ainda consta UNSETTLED).</p></div></div>
+      <div class="read up"><div class="ic">↑</div><div><h4>Escalar <a class="cr" href="https://drive.google.com/file/d/10bQNUfmtQ8XYngRhrdt9WBF5iHc53eqN/view" target="_blank" rel="noopener">ADV07</a> e <a class="cr" href="https://drive.google.com/file/d/11rQ9H9Dobq0sS68JRREt9DiEiNwi27DT/view" target="_blank" rel="noopener">ADV06</a></h4><p>Somam 50 das 56 vendas (89%). São os cavalos de tração — mais verba neles e novas variações do mesmo ângulo (curiosidade + dor de crédito negado).</p></div></div>
       <div class="read warn"><div class="ic">!</div><div><h4>Renovar a leva <a class="cr" href="https://drive.google.com/file/d/1IHq5Kp2aM9tG0dLbOvBCwGsNONbqNZR6/view" target="_blank" rel="noopener">ADV08</a>–<a class="cr" href="https://drive.google.com/file/d/11aPLXkaEdtYKwLjIDoeo8EXx1iwUQcIH/view" target="_blank" rel="noopener">ADV12</a></h4><p>Gastaram ~R$ 440 e não converteram (0 vendas). Pausar <a class="cr" href="https://drive.google.com/file/d/1IHq5Kp2aM9tG0dLbOvBCwGsNONbqNZR6/view" target="_blank" rel="noopener">ADV08</a> e <a class="cr" href="https://drive.google.com/file/d/1sasYEoHpumj-4J0453LHrMli2evYxLxL/view" target="_blank" rel="noopener">ADV09</a> e testar novos ângulos do banco de copies.</p></div></div>
       <div class="read act"><div class="ic">⟳</div><div><h4>Recuperar PIX pendente</h4><p>26 pedidos aguardando pagamento = R$ 1.457,40 em aberto. Régua de recuperação (WhatsApp/e-mail) transforma parte disso em receita já rastreada.</p></div></div>
       <div class="read act"><div class="ic">₪</div><div><h4>Fechar o ciclo com o back-end</h4><p>O produto de entrada (R$ 79,90) não fecha no ROAS sozinho — por definição. O resultado real depende da conversão dos compradores no produto principal pelo time comercial. O próximo relatório deve cruzar com o faturamento de back-end.</p></div></div>
@@ -326,7 +326,7 @@ footer .disc{margin-top:14px;font-size:12px;color:#6f6880;max-width:760px;line-h
       <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
     </div>
     <p>Central de Estratégia e Resultados · Gestão de Tráfego Pago · rafael@britomidias.com.br</p>
-    <p class="disc">Relatório gerado em 31/07/2026, 08:27. Vendas apuradas direto da planilha Kiwify (Iarla Pugliesi), somente pedidos aprovados, valor bruto como retorno — período 01 a 31/07. Investimento e métricas de anúncio apurados direto do Meta Ads (conta CA - Anunciante - Iarla Pugliesi) — última leitura possível em 28/07, pois a conta entrou em status UNSETTLED (pendência de pagamento) e travou o acesso aos dados; como a entrega ficou praticamente zerada de 29 a 31/07, o investimento reportado aproxima o total do mês.</p>
+    <p class="disc">Relatório gerado em 31/07/2026, 08:27. Vendas apuradas direto da planilha Kiwify (Iarla Pugliesi), somente pedidos aprovados, valor bruto como retorno — período 01 a 31/07 (dia 31 parcial). Investimento e métricas de anúncio apurados direto do Meta Ads (conta CA - Anunciante - Iarla Pugliesi). A conta esteve em status UNSETTLED (pendência de pagamento) no fim do mês, interrompendo a entrega nos dias 26–27 e 30–31/07, e já foi regularizada (ACTIVE).</p>
   </div>
 </footer>
 
